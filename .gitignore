@@ -4,6 +4,9 @@
 # Node dependencies
 /node_modules
 
+# Build output
+/dist/
+
 #
 # create-next-app
 #
