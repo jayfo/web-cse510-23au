@@ -5,8 +5,8 @@
   "scripts": {
     "build": "next build",
     "dev": "next dev",
-    "format": "yarn prettier . --write",
-    "format:check": "yarn prettier . --check",
+    "format": "prettier . --write",
+    "format:check": "prettier . --check",
     "lint": "next lint"
   },
   "dependencies": {
