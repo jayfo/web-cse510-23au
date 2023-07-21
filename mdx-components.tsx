@@ -1,7 +1,9 @@
+// Required to use MDX in app directory, based on example:
+// https://github.com/vercel/next.js/tree/canary/examples/app-dir-mdx
+// Accessed 2023-07-21.
+
 import type { MDXComponents } from "mdx/types";
 
-// Required to use MDX in app directory.
-// https://github.com/vercel/next.js/tree/canary/examples/app-dir-mdx
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
     // Allows customizing built-in components.
