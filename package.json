@@ -23,6 +23,7 @@
     "react-dom": "18.x"
   },
   "devDependencies": {
+    "@ianvs/prettier-plugin-sort-imports": "4.x",
     "@mdx-js/loader": "2.x",
     "@types/node": "20.x",
     "@types/react": "18.x",
@@ -31,6 +32,7 @@
     "eslint-config-next": "13.x",
     "eslint-config-prettier": "8.x",
     "prettier": "3.x",
+    "prettier-plugin-packagejson": "2.x",
     "typescript": "5.x",
     "webpack": "5.x"
   }
