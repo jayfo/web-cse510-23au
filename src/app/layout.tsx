@@ -8,9 +8,10 @@ import RootLayout from "@/components/RootLayout";
 import ThemeRegistry from "@/components/ThemeRegistry";
 import { Roboto } from "next/font/google";
 
+// TODO: Pull course title from a configuration
 export const metadata = {
-  title: "Next.js App Router + Material UI v5",
-  description: "Next.js App Router + Material UI v5",
+  title: "CSE 510 - Advanced Topics in HCI - Autumn 2023",
+  description: "CSE 510 - Advanced Topics in HCI - Autumn 2023",
 };
 
 const roboto = Roboto({
