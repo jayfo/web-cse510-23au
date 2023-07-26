@@ -8,6 +8,8 @@ import RootLayout from "@/components/RootLayout";
 import ThemeRegistry from "@/components/ThemeRegistry";
 import { Roboto } from "next/font/google";
 
+import DrawerChildren from "./drawer";
+
 // TODO: Pull course title from a configuration
 export const metadata = {
   title: "CSE 510 - Advanced Topics in HCI - Autumn 2023",
@@ -25,7 +27,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     <html lang="en" className={roboto.variable}>
       <body className={roboto.className}>
         <ThemeRegistry>
-          <RootLayout>{children}</RootLayout>
+          <RootLayout drawer={<DrawerChildren />}>{children}</RootLayout>
         </ThemeRegistry>
       </body>
     </html>
