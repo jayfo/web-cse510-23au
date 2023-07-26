@@ -3,7 +3,7 @@
 // Accessed 2023-07-26.
 
 import { createTheme } from "@mui/material/styles";
-import {Roboto} from "next/font/google";
+import { Roboto } from "next/font/google";
 
 const roboto = Roboto({
   variable: "--font-roboto",
