@@ -59,7 +59,7 @@ export default function RootLayout({
             sx={{
               // Apply consistent padding and force 0 margin top for first child.
               pt: 3,
-              "& :first-child": {
+              "& > :first-child": {
                 mt: 0,
               },
             }}
@@ -73,7 +73,7 @@ export default function RootLayout({
             flexGrow: 1,
             // Apply consistent padding and force 0 margin top for first child.
             p: 3,
-            "& :first-child": {
+            "& > :first-child": {
               mt: 0,
             },
           }}
