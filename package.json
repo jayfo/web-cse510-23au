@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "clean": "node scripts/clean.ts",
     "dev": "next dev",
     "export": "next build && next-image-export-optimizer",
     "format": "prettier . --write",
@@ -36,6 +37,7 @@
     "next-image-export-optimizer": "1.x",
     "prettier": "3.x",
     "prettier-plugin-packagejson": "2.x",
+    "rimraf": "5.x",
     "typescript": "5.x",
     "webpack": "5.x"
   }
