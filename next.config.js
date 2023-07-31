@@ -24,8 +24,33 @@ const nextConfig = {
   // Configure pageExtensions to include md and mdx.
   pageExtensions: ["ts", "tsx", "js", "jsx", "md", "mdx"],
 
+  // Required for next-image-export-optimizer.
+  // https://github.com/Niels-IO/next-image-export-optimizer
+  transpilePackages: ["next-image-export-optimizer"],
+
+  // Configuration of next-image-export-optimizer.
+  // https://github.com/Niels-IO/next-image-export-optimizer
+  images: {
+    loader: "custom",
+    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
+  },
+  env: {
+    // Configuration of next-image-export-optimizer.
+    // https://github.com/Niels-IO/next-image-export-optimizer
+    nextImageExportOptimizer_imageFolderPath: "public/images",
+    nextImageExportOptimizer_exportFolderPath: "dist",
+    nextImageExportOptimizer_exportFolderName: "images-optimized",
+    nextImageExportOptimizer_quality: 100,
+    nextImageExportOptimizer_storePicturesInWEBP: true,
+
+    // Disabling blurry placeholder images, requires setting this to false
+    // and passing placeholder="empty" to all <ExportedImage> components.
+    nextImageExportOptimizer_generateAndUseBlurImages: true,
+  },
+
   experimental: {
-    // Disable mdxRs in order to allow plugins.
+    // Disable mdxRs in order to allow plugins as part of MDX configuration.
     mdxRs: false,
   },
 };

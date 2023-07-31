@@ -3,11 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "build": "next build",
     "dev": "next dev",
+    "export": "next build && next-image-export-optimizer",
     "format": "prettier . --write",
     "format:check": "prettier . --check",
-    "lint": "next lint"
+    "lint": "next lint",
+    "serve": "http-server dist"
   },
   "dependencies": {
     "@emotion/cache": "11.x",
@@ -31,6 +32,8 @@
     "eslint": "8.x",
     "eslint-config-next": "13.x",
     "eslint-config-prettier": "8.x",
+    "http-server": "14.x",
+    "next-image-export-optimizer": "1.x",
     "prettier": "3.x",
     "prettier-plugin-packagejson": "2.x",
     "typescript": "5.x",

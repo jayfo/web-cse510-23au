@@ -1,14 +1,19 @@
-# IDE configurations
+# IDE configurations.
 /.idea/
 
-# Node dependencies
+# Node dependencies.
 /node_modules/
 
-# Build output
+# Build output.
 /dist/
+
+# Optimized images.
+/public/images/next-image-export-optimizer-hashes.json
+/public/**/images-optimized/
 
 #
 # create-next-app
+# TODO: Cleanup
 #
 
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
