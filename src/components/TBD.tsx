@@ -4,7 +4,7 @@ import Box from "@mui/material/Box";
 
 interface TBDProps extends React.PropsWithChildren<{}> {}
 
-const TBD: React.FunctionComponent<TBDProps> = ({ children }: TBDProps) => {
+export const TBD = ({ children }: TBDProps): React.ReactElement => {
   return (
     <Box
       sx={{
