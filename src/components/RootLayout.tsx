@@ -14,13 +14,14 @@ import Typography from "@mui/material/Typography";
 
 const DRAWER_WIDTH = 240;
 
+interface RootLayoutProps extends React.PropsWithChildren<{}> {
+  drawer: React.ReactNode;
+}
+
 export default function RootLayout({
   drawer,
   children,
-}: {
-  drawer: React.ReactNode;
-  children: React.ReactNode;
-}) {
+}: RootLayoutProps): React.ReactElement {
   return (
     <React.Fragment>
       <AppBar
