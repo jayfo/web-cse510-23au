@@ -7,25 +7,22 @@ import Box from "@mui/material/Box";
 
 interface TBDProps extends React.PropsWithChildren<{}> {
   component?: WrapperComponent;
-  innerComponent?: WrapperComponent;
+  outerComponent?: WrapperComponent;
 }
 
 export const TBD = ({
   children,
-  // Default component to block "div".
-  // This is the same default as Box.
-  component = "div",
-  // Default innerComponent to inline "span".
-  // TBD styling will apply only to the inline text,
-  // not to any entire surrounding block.
-  innerComponent = "span",
+  // Default component to inline "span".
+  component = "span",
+  // Default no outer component.
+  outerComponent,
 }: TBDProps): React.ReactElement => {
   // MDX does not enforce this.
   assertIsWrapperComponent(component);
 
-  const resultInnerComponent = (
+  const resultComponent: React.ReactElement = (
     <Box
-      component={innerComponent}
+      component={component}
       sx={{
         // Apply a background.
         // If this background is not appearing,
@@ -38,12 +35,10 @@ export const TBD = ({
     </Box>
   );
 
-  // Create the outer component.
-  if (component === innerComponent) {
-    // No reason to duplicate the component.
-    return resultInnerComponent;
+  if (outerComponent) {
+    return <Box component={outerComponent}>{resultComponent}</Box>;
   } else {
-    return <Box component={component}>{resultInnerComponent}</Box>;
+    return resultComponent;
   }
 };
 

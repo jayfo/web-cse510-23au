@@ -14,21 +14,18 @@ import Link from "@mui/material/Link";
 import { observer } from "mobx-react";
 
 interface CourseDataLinkProps extends React.PropsWithChildren<{}> {
-  linkKey: CourseDataStoreLinkKey;
   component?: WrapperComponent;
-  innerComponent?: WrapperComponent;
+  outerComponent?: WrapperComponent;
+  linkKey: CourseDataStoreLinkKey;
 }
 
 export const CourseDataLink = observer(
   ({
     children,
     // Default component to inline "span".
-    // This is the same default as <a>.
     component = "span",
-    // Default innerComponent to inline "span".
-    // TBD styling will apply only to the inline text,
-    // not to any entire surrounding block.
-    innerComponent = "span",
+    // Default no outer component.
+    outerComponent,
     linkKey,
   }: CourseDataLinkProps): React.ReactElement => {
     const appStore = useAppStore();
@@ -39,41 +36,41 @@ export const CourseDataLink = observer(
     // Actual href retrieved from CourseDataStore.
     const href = appStore.courseDataStore[linkKey];
 
-    // If we do not have any anchor content,
-    // populate with some appropriate default.
-    if (children === undefined) {
-      if (href) {
-        // If we have an actual href, default to the link itself.
-        children = appStore.courseDataStore[linkKey];
+    const resultComponentAnchor: React.ReactNode = (() => {
+      if (children) {
+        // If we have any anchor content, use that.
+        return children;
       } else {
-        // Without an actual href, indicate the link is TBD.
-        children = "Link TBD.";
+        // If we do not have any anchor content, use an appropriate default.
+        if (href) {
+          // If we have an actual href, default to the link itself.
+          return appStore.courseDataStore[linkKey];
+        } else {
+          // Without an actual href, indicate the link is TBD.
+          return "Link TBD.";
+        }
       }
-    }
+    })();
 
-    // Create the inner component.
-    const resultInnerComponent: React.ReactElement = (() => {
+    const resultComponent: React.ReactElement = (() => {
       if (href) {
-        // Actual href is available, create the link.
-
+        // Href is available, create the link.
         // TODO: Use correct type of link.
         return (
           <Link href={href}>
-            <Box component={innerComponent}>{children}</Box>
+            <Box component={component}>{resultComponentAnchor}</Box>
           </Link>
         );
       } else {
         // Actual href is not available, create a TBD.
-        return <TBD component={innerComponent}>{children}</TBD>;
+        return <TBD component={component}>{resultComponentAnchor}</TBD>;
       }
     })();
 
-    // Create the outer component.
-    if (component === innerComponent) {
-      // No reason to duplicate the component.
-      return resultInnerComponent;
+    if (outerComponent) {
+      return <Box component={outerComponent}>{resultComponent}</Box>;
     } else {
-      return <Box component={component}>{resultInnerComponent}</Box>;
+      return resultComponent;
     }
   },
 );
