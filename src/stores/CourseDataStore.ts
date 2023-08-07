@@ -1,5 +1,5 @@
 import CourseDataStore from "@/types/CourseDataStore";
-import {makeObservable, observable} from "mobx";
+import { makeObservable, observable } from "mobx";
 
 export class CourseDataStoreImpl implements CourseDataStore {
   @observable linkCanvas = undefined;

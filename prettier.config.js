@@ -18,6 +18,7 @@ const prettierConfig = {
     // Relative imports.
     "^[.]",
   ],
+  importOrderParserPlugins: ["typescript", "jsx", "decorators"],
   importOrderTypeScriptVersion: "5.0.0",
 };
 
