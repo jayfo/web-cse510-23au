@@ -1,6 +1,6 @@
 // Based on example:
-// https://github.com/mui/material-ui/blob/master/examples/material-next-app-router-ts/
-// Accessed 2023-07-26.
+// https://github.com/mui/material-ui/tree/master/examples/material-ui-nextjs-ts
+// Accessed 2023-08-08.
 
 import * as React from "react";
 
