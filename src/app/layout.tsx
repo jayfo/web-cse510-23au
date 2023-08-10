@@ -4,9 +4,6 @@
 
 import * as React from "react";
 
-import AppStoreProvider, {
-  createAppStore,
-} from "@/components/AppStoreProvider";
 import RootLayout from "@/components/RootLayout";
 import ThemeRegistry from "@/components/ThemeRegistry";
 
@@ -18,7 +15,6 @@ export const metadata = {
   description: "CSE 510 - Advanced Topics in HCI - Autumn 2023",
 };
 
-const appStore = createAppStore();
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
