@@ -1,13 +1,13 @@
-import CourseDataStoreImpl from "@/stores/CourseDataStore";
+import CourseStoreImpl from "@/stores/CourseStore";
 import AppStore from "@/types/AppStore";
-import CourseDataStore from "@/types/CourseDataStore";
+import CourseStore from "@/types/CourseStore";
 import { makeObservable, observable } from "mobx";
 
 class AppStoreImpl implements AppStore {
-  @observable courseDataStore: CourseDataStore;
+  @observable courseDataStore: CourseStore;
 
   constructor() {
-    this.courseDataStore = new CourseDataStoreImpl();
+    this.courseDataStore = new CourseStoreImpl();
 
     makeObservable(this);
   }

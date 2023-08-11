@@ -1,7 +1,7 @@
-import CourseDataStore from "@/types/CourseDataStore";
+import CourseStore from "@/types/CourseStore";
 import { makeObservable, observable } from "mobx";
 
-export class CourseDataStoreImpl implements CourseDataStore {
+export class CourseStoreImpl implements CourseStore {
   @observable linkCanvas = undefined;
   @observable linkGitHub = undefined;
   @observable linkUniversitySyllabusGuidelines = undefined;
@@ -11,4 +11,4 @@ export class CourseDataStoreImpl implements CourseDataStore {
   }
 }
 
-export default CourseDataStoreImpl;
+export default CourseStoreImpl;

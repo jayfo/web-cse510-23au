@@ -5,21 +5,21 @@ import * as React from "react";
 import { useAppStore } from "@/components/AppStoreProvider";
 import TBD from "@/components/TBD";
 import {
-  assertIsCourseDataStoreLinkKey,
-  CourseDataStoreLinkKey,
-} from "@/types/CourseDataStore";
+  assertIsCourseStoreLinkKey,
+  CourseStoreLinkKey,
+} from "@/types/CourseStore";
 import WrapperComponent from "@/types/WrapperComponent";
 import Box from "@mui/material/Box";
 import Link from "@mui/material/Link";
 import { observer } from "mobx-react";
 
-interface CourseDataLinkProps extends React.PropsWithChildren<{}> {
+interface CourseLinkProps extends React.PropsWithChildren<{}> {
   component?: WrapperComponent;
   outerComponent?: WrapperComponent;
-  linkKey: CourseDataStoreLinkKey;
+  linkKey: CourseStoreLinkKey;
 }
 
-export const CourseDataLink = observer(
+export const CourseLink = observer(
   ({
     children,
     // Default component to inline "span".
@@ -27,11 +27,11 @@ export const CourseDataLink = observer(
     // Default no outer component.
     outerComponent,
     linkKey,
-  }: CourseDataLinkProps): React.ReactElement => {
+  }: CourseLinkProps): React.ReactElement => {
     const appStore = useAppStore();
 
     // MDX does not enforce this.
-    assertIsCourseDataStoreLinkKey(linkKey);
+    assertIsCourseStoreLinkKey(linkKey);
 
     // Actual href retrieved from CourseDataStore.
     const href = appStore.courseDataStore[linkKey];
@@ -75,4 +75,4 @@ export const CourseDataLink = observer(
   },
 );
 
-export default CourseDataLink;
+export default CourseLink;

@@ -1,11 +1,11 @@
 import { AssertionError } from "assert";
 
-import CourseDataStore, {
-  CourseDataStoreLinkKey,
-} from "@/types/CourseDataStore";
+import CourseStore, {
+  CourseStoreLinkKey,
+} from "@/types/CourseStore";
 
 export interface AppStore {
-  courseDataStore: CourseDataStore;
+  courseDataStore: CourseStore;
 }
 
 export default AppStore;
