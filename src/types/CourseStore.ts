@@ -7,8 +7,7 @@ const CourseStoreLinkKeyValues = [
   "linkGitHub",
   "linkUniversitySyllabusGuidelines",
 ] as const;
-export type CourseStoreLinkKey =
-  (typeof CourseStoreLinkKeyValues)[number];
+export type CourseStoreLinkKey = (typeof CourseStoreLinkKeyValues)[number];
 
 export function assertIsCourseStoreLinkKey(
   courseStoreLinkKey: any,
@@ -24,8 +23,6 @@ export interface CourseStoreData {
   linkUniversitySyllabusGuidelines?: CourseStoreLink;
 }
 
-export interface CourseStore extends CourseStoreData {
-
-}
+export interface CourseStore extends CourseStoreData {}
 
 export default CourseStore;

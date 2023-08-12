@@ -33,8 +33,8 @@ export const CourseLink = observer(
     // MDX does not enforce this.
     assertIsCourseStoreLinkKey(linkKey);
 
-    // Actual href retrieved from CourseDataStore.
-    const href = appStore.courseDataStore[linkKey];
+    // Actual href retrieved from CourseStore.
+    const href = appStore.courseStore[linkKey];
 
     const resultComponentAnchor: React.ReactNode = (() => {
       if (children) {
@@ -44,7 +44,7 @@ export const CourseLink = observer(
         // If we do not have any anchor content, use an appropriate default.
         if (href) {
           // If we have an actual href, default to the link itself.
-          return appStore.courseDataStore[linkKey];
+          return appStore.courseStore[linkKey];
         } else {
           // Without an actual href, indicate the link is TBD.
           return "Link TBD.";

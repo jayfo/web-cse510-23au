@@ -1,12 +1,21 @@
-import CourseStore from "@/types/CourseStore";
+import CourseStore, {
+  CourseStoreData,
+  CourseStoreLink,
+} from "@/types/CourseStore";
 import { makeObservable, observable } from "mobx";
 
 export class CourseStoreImpl implements CourseStore {
-  @observable linkCanvas = undefined;
-  @observable linkGitHub = undefined;
-  @observable linkUniversitySyllabusGuidelines = undefined;
+  @observable linkCanvas?: CourseStoreLink;
+  @observable linkGitHub?: CourseStoreLink;
+  @observable linkUniversitySyllabusGuidelines?: CourseStoreLink;
 
-  constructor() {
+  constructor(initialData: CourseStoreData) {
+    ({
+      linkCanvas: this.linkCanvas,
+      linkGitHub: this.linkGitHub,
+      linkUniversitySyllabusGuidelines: this.linkUniversitySyllabusGuidelines,
+    } = initialData);
+
     makeObservable(this);
   }
 }
