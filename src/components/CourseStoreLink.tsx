@@ -13,13 +13,13 @@ import Box from "@mui/material/Box";
 import Link from "@mui/material/Link";
 import { observer } from "mobx-react";
 
-interface CourseLinkProps extends React.PropsWithChildren<{}> {
+interface CourseStoreLinkProps extends React.PropsWithChildren<{}> {
   component?: WrapperComponent;
   outerComponent?: WrapperComponent;
   linkKey: CourseStoreLinkKey;
 }
 
-export const CourseLink = observer(
+export const CourseStoreLink = observer(
   ({
     children,
     // Default component to inline "span".
@@ -27,7 +27,7 @@ export const CourseLink = observer(
     // Default no outer component.
     outerComponent,
     linkKey,
-  }: CourseLinkProps): React.ReactElement => {
+  }: CourseStoreLinkProps): React.ReactElement => {
     const appStore = useAppStore();
 
     // MDX does not enforce this.
@@ -75,4 +75,4 @@ export const CourseLink = observer(
   },
 );
 
-export default CourseLink;
+export default CourseStoreLink;

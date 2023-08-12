@@ -1,13 +1,13 @@
 import CourseStore, {
   CourseStoreData,
-  CourseStoreLink,
+  CourseStoreLinkHREF,
 } from "@/types/CourseStore";
 import {computed, makeObservable, observable} from "mobx";
 
 export class CourseStoreImpl implements CourseStore {
-  @observable linkCanvas?: CourseStoreLink;
-  @observable linkGitHub?: CourseStoreLink;
-  @observable linkUniversitySyllabusGuidelines?: CourseStoreLink;
+  @observable linkCanvas?: CourseStoreLinkHREF;
+  @observable linkGitHub?: CourseStoreLinkHREF;
+  @observable linkUniversitySyllabusGuidelines?: CourseStoreLinkHREF;
 
   constructor(initialData: CourseStoreData) {
     ({
@@ -20,7 +20,7 @@ export class CourseStoreImpl implements CourseStore {
   }
 
   @computed
-  get linkCanvasDiscussion(): CourseStoreLink | undefined {
+  get linkCanvasDiscussion(): CourseStoreLinkHREF | undefined {
     if (this.linkCanvas) {
       return this.linkCanvas + '/discussion_topics';
     } else {

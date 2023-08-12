@@ -1,6 +1,6 @@
 import { AssertionError } from "assert";
 
-export type CourseStoreLink = string;
+export type CourseStoreLinkHREF = string;
 
 const CourseStoreLinkKeyValues = [
   "linkCanvas",
@@ -19,13 +19,13 @@ export function assertIsCourseStoreLinkKey(
 }
 
 export interface CourseStoreData {
-  linkCanvas?: CourseStoreLink;
-  linkGitHub?: CourseStoreLink;
-  linkUniversitySyllabusGuidelines?: CourseStoreLink;
+  linkCanvas?: CourseStoreLinkHREF;
+  linkGitHub?: CourseStoreLinkHREF;
+  linkUniversitySyllabusGuidelines?: CourseStoreLinkHREF;
 }
 
 export interface CourseStore extends CourseStoreData {
-  linkCanvasDiscussion?: CourseStoreLink;
+  linkCanvasDiscussion?: CourseStoreLinkHREF;
 }
 
 export default CourseStore;
