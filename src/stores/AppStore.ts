@@ -17,7 +17,7 @@ class AppStoreImpl implements AppStore {
   }
 
   @computed
-  get courseStoreData() {
+  get courseStoreData(): CourseStoreData {
     return this.courseStore;
   }
 }

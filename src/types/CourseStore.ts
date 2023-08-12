@@ -4,6 +4,7 @@ export type CourseStoreLink = string;
 
 const CourseStoreLinkKeyValues = [
   "linkCanvas",
+  "linkCanvasDiscussion",
   "linkGitHub",
   "linkUniversitySyllabusGuidelines",
 ] as const;
@@ -23,6 +24,8 @@ export interface CourseStoreData {
   linkUniversitySyllabusGuidelines?: CourseStoreLink;
 }
 
-export interface CourseStore extends CourseStoreData {}
+export interface CourseStore extends CourseStoreData {
+  linkCanvasDiscussion?: CourseStoreLink;
+}
 
 export default CourseStore;

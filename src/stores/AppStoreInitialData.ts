@@ -1,7 +1,7 @@
 import "server-only";
 
+import initialCourseStoreData from "@/data/CourseData";
 import { AppStoreData } from "@/types/AppStore";
-import initialCourseStoreData from "@/data/CourseData"
 
 export function appStoreInitialData(): AppStoreData {
   return {
