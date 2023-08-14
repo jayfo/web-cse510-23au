@@ -2,6 +2,7 @@
   "name": "web-cse510-23au",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "clean": "node scripts/clean.ts",
     "dev": "next dev",
@@ -26,6 +27,7 @@
     "react": "18.x",
     "react-dom": "18.x",
     "server-only": "latest"
+    "rehype-slug": "5.x",
   },
   "devDependencies": {
     "@ianvs/prettier-plugin-sort-imports": "4.x",

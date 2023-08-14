@@ -1,12 +1,15 @@
+import mdx from "@next/mdx";
+import rehypeSlug from "rehype-slug";
+
 // MDX Configuration.
 // https://nextjs.org/docs/pages/building-your-application/configuring/mdx
-const withMDX = require("@next/mdx")({
+const withMDX = mdx({
   extension: /\.mdx?$/,
   options: {
     // If we later use remark-gfm, we will need to use next.config.mjs.
     // https://github.com/remarkjs/remark-gfm#install
     remarkPlugins: [],
-    rehypePlugins: [],
+    rehypePlugins: [rehypeSlug],
   },
 });
 
@@ -55,4 +58,4 @@ const nextConfig = {
   },
 };
 
-module.exports = withMDX(nextConfig);
+export default withMDX(nextConfig);
