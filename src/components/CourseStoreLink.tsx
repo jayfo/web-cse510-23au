@@ -2,6 +2,7 @@
 
 import * as React from "react";
 
+import AppLink from "@/components/AppLink";
 import { useAppStore } from "@/components/AppStoreProvider";
 import TBD from "@/components/TBD";
 import {
@@ -10,7 +11,6 @@ import {
 } from "@/types/CourseStore";
 import WrapperComponent from "@/types/WrapperComponent";
 import Box from "@mui/material/Box";
-import Link from "@mui/material/Link";
 import { observer } from "mobx-react";
 
 interface CourseStoreLinkProps extends React.PropsWithChildren<{}> {
@@ -57,9 +57,9 @@ export const CourseStoreLink = observer(
         // Href is available, create the link.
         // TODO: Use correct type of link.
         return (
-          <Link href={href}>
+          <AppLink href={href}>
             <Box component={component}>{resultComponentAnchor}</Box>
-          </Link>
+          </AppLink>
         );
       } else {
         // Actual href is not available, create a TBD.
