@@ -22,5 +22,4 @@ const prettierConfig = {
   importOrderTypeScriptVersion: "5.0.0",
 };
 
-export default prettierConfig;
-// module.exports = prettierConfig;
+module.exports = prettierConfig;
