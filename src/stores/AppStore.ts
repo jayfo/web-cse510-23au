@@ -4,13 +4,9 @@ import CourseStore, { CourseStoreData } from "@/types/CourseStore";
 import { computed, makeObservable, observable } from "mobx";
 
 class AppStoreImpl implements AppStore {
-  @observable testServerTime: Date;
-
   @observable courseStore: CourseStore;
 
   constructor(initialData: AppStoreData) {
-    ({ testServerTime: this.testServerTime } = initialData);
-
     this.courseStore = new CourseStoreImpl(initialData.courseStoreData);
 
     makeObservable(this);

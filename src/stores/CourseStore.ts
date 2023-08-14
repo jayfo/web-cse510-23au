@@ -2,7 +2,7 @@ import CourseStore, {
   CourseStoreData,
   CourseStoreLinkHREF,
 } from "@/types/CourseStore";
-import {computed, makeObservable, observable} from "mobx";
+import { computed, makeObservable, observable } from "mobx";
 
 export class CourseStoreImpl implements CourseStore {
   @observable linkCanvas?: CourseStoreLinkHREF;
@@ -22,7 +22,7 @@ export class CourseStoreImpl implements CourseStore {
   @computed
   get linkCanvasDiscussion(): CourseStoreLinkHREF | undefined {
     if (this.linkCanvas) {
-      return this.linkCanvas + '/discussion_topics';
+      return this.linkCanvas + "/discussion_topics";
     } else {
       return undefined;
     }
