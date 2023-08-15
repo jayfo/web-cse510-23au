@@ -4,9 +4,7 @@
 
 import * as React from "react";
 
-import AppStoreProvider from "@/components/AppStoreProvider";
 import RootLayout from "@/components/RootLayout";
-import ThemeRegistry from "@/components/ThemeRegistry";
 import { appStoreInitialData } from "@/stores/AppStoreInitialData";
 
 import DrawerChildren from "./drawer";
@@ -21,14 +19,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   const initialData = appStoreInitialData();
 
   return (
-    <html lang="en">
-      <body>
-        <ThemeRegistry>
-          <AppStoreProvider initialData={initialData}>
-            <RootLayout drawer={<DrawerChildren />}>{children}</RootLayout>
-          </AppStoreProvider>
-        </ThemeRegistry>
-      </body>
-    </html>
+    <RootLayout drawerChildren={<DrawerChildren />} initialData={initialData}>
+      {children}
+    </RootLayout>
   );
 }
