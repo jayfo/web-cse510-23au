@@ -102,24 +102,24 @@ export function useLayoutStyles(): SxProps<MUITheme> {
     // By default, these are specified in em.
     // https://www.w3schools.com/cssref/css_default_values.php
     {
-        h1: {
-          scrollMarginTop: "0.67em",
-        },
-        h2: {
-          scrollMarginTop: "0.83em",
-        },
-        h3: {
-          scrollMarginTop: "1.00em",
-        },
-        h4: {
-          scrollMarginTop: "1.33em",
-        },
-        h5: {
-          scrollMarginTop: "1.67em",
-        },
-        h6: {
-          scrollMarginTop: "2.33em",
-        },
-    }
+      h1: {
+        scrollMarginTop: "0.67em",
+      },
+      h2: {
+        scrollMarginTop: "0.83em",
+      },
+      h3: {
+        scrollMarginTop: "1.00em",
+      },
+      h4: {
+        scrollMarginTop: "1.33em",
+      },
+      h5: {
+        scrollMarginTop: "1.67em",
+      },
+      h6: {
+        scrollMarginTop: "2.33em",
+      },
+    },
   ];
 }
