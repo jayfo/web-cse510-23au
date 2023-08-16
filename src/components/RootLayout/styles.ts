@@ -51,18 +51,18 @@ export function useHTMLElementStyles(): React.CSSProperties {
   };
 }
 
-const sxContentElements: SxProps = {
-  // Apply padding
-  // and force 0 margin top for first child.
-  p: 3,
-  "& > :first-child": {
-    mt: 0,
-  },
-};
-
 // Disable warning due to inline function objects.
 // noinspection BadExpressionStatementJS
 export function useLayoutStyles(): SxProps<MUITheme> {
+  const sxContentElements: SxProps<MUITheme> = {
+    // Apply padding
+    // and force 0 margin top for first child.
+    p: 3,
+    "& > :first-child": {
+      mt: 0,
+    },
+  };
+
   return [
     // Ensure the AppBar floats above everything.
     (theme): SystemStyleObject => ({
