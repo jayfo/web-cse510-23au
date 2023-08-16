@@ -17,9 +17,7 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import { SxProps } from "@mui/system";
 
-import { HTML_ELEMENT_STYLES, LAYOUT_STYLES } from "./styles";
-
-const DRAWER_WIDTH = 240;
+import { useHTMLElementStyles, useLayoutStyles } from "./styles";
 
 interface outerLayoutProps extends React.PropsWithChildren<{}> {
   initialData: AppStoreData;
@@ -64,28 +62,15 @@ function InnerLayout({
         </Toolbar>
       </AppBar>
       <Box sx={{ display: "flex" }}>
-        <Drawer
-          sx={{
-            width: DRAWER_WIDTH,
-            flexShrink: 0,
-            "& .MuiDrawer-paper": {
-              width: DRAWER_WIDTH,
-              boxSizing: "border-box",
-              height: "auto",
-              bottom: 0,
-            },
-          }}
-          variant="permanent"
-          anchor="left"
-        >
+        <Drawer id="rootLayout-drawer" variant="permanent" anchor="left">
           {/* Empty ToolBar pushes Drawer content downward. */}
           <Toolbar />
-          <Box id="rootLayout-drawer" component="nav">
+          <Box id="rootLayout-drawer-content" component="nav">
             {drawerChildren}
           </Box>
         </Drawer>
         <Box
-          id="rootLayout-main"
+          id="rootLayout-main-content"
           component="main"
           sx={{
             flexGrow: 1,
@@ -111,8 +96,8 @@ export default function RootLayout({
   return (
     <OuterLayout
       initialData={initialData}
-      htmlElementStyles={HTML_ELEMENT_STYLES}
-      layoutStyles={LAYOUT_STYLES}
+      htmlElementStyles={useHTMLElementStyles()}
+      layoutStyles={useLayoutStyles()}
     >
       <InnerLayout drawerChildren={drawerChildren}>{children}</InnerLayout>
     </OuterLayout>
