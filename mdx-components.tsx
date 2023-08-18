@@ -6,6 +6,7 @@ import * as React from "react";
 
 import AppLink from "@/components/AppLink";
 import { assertNotNull } from "@/types/Guards";
+import { Typography } from "@mui/material";
 import type { MDXComponents } from "mdx/types";
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
@@ -20,29 +21,68 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
       return <AppLink href={href}>{children}</AppLink>;
     },
 
-    // MDX is by default using raw html heading tags.
-    // This means MUI theming is not being applied to them.
-    // If we wanted to apply MUI theming, we would start with this.
-    // As is, the default MUI them heading font-sizes are much too large.
-    //
-    // h1: ({ children}) => {
-    //   return <Typography variant="h1">{children}</Typography>
-    // },
-    // h2: ({ children}) => {
-    //   return <Typography variant="h2">{children}</Typography>
-    // },
-    // h3: ({ children}) => {
-    //   return <Typography variant="h3">{children}</Typography>
-    // },
-    // h4: ({ children}) => {
-    //   return <Typography variant="h4">{children}</Typography>
-    // },
-    // h5: ({ children}) => {
-    //   return <Typography variant="h5">{children}</Typography>
-    // },
-    // h6: ({ children}) => {
-    //   return <Typography variant="h6">{children}</Typography>
-    // },
+    // If MDX uses raw html heading elements, then MUI theming is not applied.
+    // For internal consistency, apply theme typography to each heading type.
+    h1: ({
+      children,
+      ...props
+    }: React.PropsWithChildren | React.HTMLAttributes<HTMLHeadingElement>) => {
+      return (
+        <Typography component="h1" variant="h1" {...props}>
+          {children}
+        </Typography>
+      );
+    },
+    h2: ({
+      children,
+      ...props
+    }: React.PropsWithChildren | React.HTMLAttributes<HTMLHeadingElement>) => {
+      return (
+        <Typography component="h2" variant="h2" {...props}>
+          {children}
+        </Typography>
+      );
+    },
+    h3: ({
+      children,
+      ...props
+    }: React.PropsWithChildren | React.HTMLAttributes<HTMLHeadingElement>) => {
+      return (
+        <Typography component="h3" variant="h3" {...props}>
+          {children}
+        </Typography>
+      );
+    },
+    h4: ({
+      children,
+      ...props
+    }: React.PropsWithChildren | React.HTMLAttributes<HTMLHeadingElement>) => {
+      return (
+        <Typography component="h4" variant="h4" {...props}>
+          {children}
+        </Typography>
+      );
+    },
+    h5: ({
+      children,
+      ...props
+    }: React.PropsWithChildren | React.HTMLAttributes<HTMLHeadingElement>) => {
+      return (
+        <Typography component="h5" variant="h5" {...props}>
+          {children}
+        </Typography>
+      );
+    },
+    h6: ({
+      children,
+      ...props
+    }: React.PropsWithChildren | React.HTMLAttributes<HTMLHeadingElement>) => {
+      return (
+        <Typography component="h6" variant="h6" {...props}>
+          {children}
+        </Typography>
+      );
+    },
 
     ...components,
   };
