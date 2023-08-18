@@ -99,8 +99,13 @@ export function useLayoutStyles(): SxProps<MUITheme> {
     },
     // The scrollPaddingTop of the page works with the scrollMarginTop of each element.
     // We want the scrollMarginTop to be the same as the marginTop.
-    // By default, these are specified in em.
+    //
+    // By default, marginTop is specified in em.
     // https://www.w3schools.com/cssref/css_default_values.php
+    //
+    // We might be able to specify this in the theme,
+    // but then it would only apply to React elements.
+    // Specifying it here also applies it to any raw html heading elements.
     {
       h1: {
         scrollMarginTop: "0.67em",
