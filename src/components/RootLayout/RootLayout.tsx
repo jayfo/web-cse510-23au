@@ -11,7 +11,7 @@ import ThemeRegistry from "@/components/ThemeRegistry";
 import { AppStoreData } from "@/types/AppStore";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
-import Drawer from "@mui/material/Drawer";
+import Container from "@mui/material/Container";
 import { Theme as MUITheme } from "@mui/material/styles";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
@@ -35,7 +35,9 @@ function OuterLayout({
       <body>
         <ThemeRegistry>
           <AppStoreProvider initialData={initialData}>
-            <Box sx={layoutStyles}>{children}</Box>
+            <Box id="app-root" sx={layoutStyles}>
+              {children}
+            </Box>
           </AppStoreProvider>
         </ThemeRegistry>
       </body>
@@ -53,32 +55,34 @@ function InnerLayout({
 }: innerLayoutProps): React.ReactElement {
   return (
     <React.Fragment>
-      <AppBar id="rootLayout-appBar" className="catdog" position="sticky">
-        <Toolbar>
-          <Typography id="rootLayout-title" component="div" noWrap>
-            {/* TODO: Pull course title from a configuration */}
-            CSE 510 - Advanced Topics in HCI - Autumn 2023
-          </Typography>
-        </Toolbar>
+      <AppBar id="rootLayout-appBar" position="sticky">
+        <Container>
+          <Toolbar>
+            <Typography id="rootLayout-title" component="div" noWrap>
+              {/* TODO: Pull course title from a configuration */}
+              CSE 510 - Advanced Topics in HCI - Autumn 2023
+            </Typography>
+          </Toolbar>
+        </Container>
       </AppBar>
-      <Box sx={{ display: "flex" }}>
-        <Drawer id="rootLayout-drawer" variant="permanent" anchor="left">
-          {/* Empty ToolBar pushes Drawer content downward. */}
-          <Toolbar />
-          <Box id="rootLayout-drawer-content" component="nav">
-            {drawerChildren}
+      <Container>
+        <Box id="rootLayout-container">
+          <Box id="rootLayout-drawer">
+            <Box id="rootLayout-drawer-content" component="nav">
+              {drawerChildren}
+            </Box>
           </Box>
-        </Drawer>
-        <Box
-          id="rootLayout-main-content"
-          component="main"
-          sx={{
-            flexGrow: 1,
-          }}
-        >
-          {children}
+          <Box
+            id="rootLayout-main-content"
+            component="main"
+            sx={{
+              flexGrow: 1,
+            }}
+          >
+            {children}
+          </Box>
         </Box>
-      </Box>
+      </Container>
     </React.Fragment>
   );
 }
