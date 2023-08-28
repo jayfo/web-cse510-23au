@@ -1,6 +1,8 @@
 import mdx from "@next/mdx";
 import rehypeSlug from "rehype-slug";
 
+import { Paths } from "./src/paths.mjs";
+
 // MDX Configuration.
 // https://nextjs.org/docs/pages/building-your-application/configuring/mdx
 const withMDX = mdx({
@@ -15,6 +17,9 @@ const withMDX = mdx({
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // Webserver base path.
+  basePath: Paths.basePath,
+
   // Ensure build and dev always assume a static export.
   output: "export",
 

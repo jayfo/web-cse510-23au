@@ -3,6 +3,7 @@ import Image from "next-image-export-optimizer";
 
 import CourseStoreLink from "@/components/CourseStoreLink";
 import TBD from "@/components/TBD";
+import { Paths } from "@/paths";
 
 import imgPhotoJames from "public/images/photo_james.jpg";
 import imgPhotoShaan from "public/images/photo_shaan.jpg";
@@ -41,13 +42,13 @@ We will emphasize learning through discussion and feedback in all aspects of the
   <Box marginTop={-2} marginBottom={-2} marginRight={2}>
     <p>James Fogarty</p>
     <p>
-      <Image src={imgPhotoJames} height="150" alt="Photo of James Fogarty." />
+      <Image src={imgPhotoJames} basePath={Paths.basePath} height="150" alt="Photo of James Fogarty." />
     </p>
   </Box>
   <Box marginTop={-2} marginBottom={-2} marginRight={2}>
     <p>Shaan Chopra</p>
     <p>
-      <Image src={imgPhotoShaan} height="150" alt="Photo of Shaan Chopra." />
+      <Image src={imgPhotoShaan} basePath={Paths.basePath} height="150" alt="Photo of Shaan Chopra." />
     </p>
   </Box>
 </Box>
