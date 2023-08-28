@@ -8,7 +8,7 @@ import { SystemStyleObject } from "@mui/system";
 
 const DRAWER_WIDTH = 240;
 
-function useAppBarHeight(): number {
+function useAppBarHeight(): 48 | 56 | 64 {
   // The height of the AppBar is controlled by this:
   // https://github.com/mui/material-ui/blob/master/packages/mui-material/src/styles/createMixins.js
   //
@@ -41,6 +41,25 @@ function useAppBarHeight(): number {
   return 56;
 }
 
+function stylesByAppBarHeight(styles: {
+  styles48: SystemStyleObject<MUITheme>;
+  styles56: SystemStyleObject<MUITheme>;
+  styles64: SystemStyleObject<MUITheme>;
+}): SystemStyleObject<MUITheme> {
+  // useAppBarHeight is not available until client Javascript.
+  // Because AppBar height is fixed to a set of 3 values,
+  // enumerating styles for each value allows server rendering
+  // which avoids changes being applied as client Javascript loads.
+
+  return {
+    "@media (min-width: 600px)": styles.styles64,
+    "@media not all and (min-width: 600px)": {
+      "@media (orientation: landscape)": styles.styles48,
+      "@media not all and (orientation: landscape)": styles.styles56,
+    },
+  };
+}
+
 // Disable warning due to inline function objects.
 // noinspection BadExpressionStatementJS
 export function useHTMLElementStyles(): React.CSSProperties {
@@ -54,7 +73,7 @@ export function useHTMLElementStyles(): React.CSSProperties {
 // Disable warning due to inline function objects.
 // noinspection BadExpressionStatementJS
 export function useLayoutStyles(): SxProps<MUITheme> {
-  const sxContentElements: SxProps<MUITheme> = {
+  const sxContentElementsMarginPadding: SystemStyleObject<MUITheme> = {
     // Apply padding
     // and force 0 margin top for first child.
     p: 3,
@@ -64,29 +83,28 @@ export function useLayoutStyles(): SxProps<MUITheme> {
   };
 
   return [
-    // Ensure the AppBar floats above everything.
-    (theme): SystemStyleObject => ({
+    // AppBar floats above everything.
+    (theme): SystemStyleObject<MUITheme> => ({
       "#rootLayout-appBar": {
         zIndex: theme.zIndex.drawer + 1,
       },
     }),
-    // Typography of the page title.
+    // Page title typography.
     {
       "#rootLayout-title": {
-        typography: "h6",
+        typography: "h3",
       },
     },
-    // Consistent styling of the two content regions.
+    // Container of drawer and main.
     {
-      "#rootLayout-drawer-content": {
-        ...sxContentElements,
-      },
-      "#rootLayout-main-content": {
-        ...sxContentElements,
+      "#rootLayout-container": {
+        display: "flex",
       },
     },
+    // Drawer is sticky.
     {
       "#rootLayout-drawer": {
+        // Hold its width.
         width: DRAWER_WIDTH,
         flexShrink: 0,
         "& .MuiDrawer-paper": {
@@ -95,6 +113,31 @@ export function useLayoutStyles(): SxProps<MUITheme> {
           height: "auto",
           bottom: 0,
         },
+        // Sticky at the top below the AppBar.
+        position: "sticky",
+        alignSelf: "flex-start",
+        // Adjust top according to height of AppBar.
+        ...stylesByAppBarHeight({
+          styles48: {
+            top: 48,
+          },
+          styles56: {
+            top: 56,
+          },
+          styles64: {
+            top: 64,
+          },
+        }),
+      },
+    },
+
+    // Consistent styling of the two content regions.
+    {
+      "#rootLayout-drawer-content": {
+        ...sxContentElementsMarginPadding,
+      },
+      "#rootLayout-main-content": {
+        ...sxContentElementsMarginPadding,
       },
     },
     // The scrollPaddingTop of the page works with the scrollMarginTop of each element.
