@@ -1,7 +1,5 @@
 "use client";
 
-import * as React from "react";
-
 import { SxProps, useMediaQuery } from "@mui/material";
 import { Theme as MUITheme } from "@mui/material/styles";
 import { SystemStyleObject } from "@mui/system";
@@ -57,16 +55,6 @@ function stylesByAppBarHeight(styles: {
       "@media (orientation: landscape)": styles.styles48,
       "@media not all and (orientation: landscape)": styles.styles56,
     },
-  };
-}
-
-// Disable warning due to inline function objects.
-// noinspection BadExpressionStatementJS
-export function useHTMLElementStyles(): React.CSSProperties {
-  return {
-    // The height of the AppBar determines our need for ScrollPaddingTop.
-    scrollPaddingTop: useAppBarHeight() + "px",
-    overflowY: "auto",
   };
 }
 

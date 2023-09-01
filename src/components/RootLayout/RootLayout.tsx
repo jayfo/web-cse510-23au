@@ -17,21 +17,20 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import { SxProps } from "@mui/system";
 
-import { useHTMLElementStyles, useLayoutStyles } from "./styles";
+import rootLayoutStyles from "./rootLayout.module.css";
+import { useLayoutStyles } from "./styles";
 
 interface outerLayoutProps extends React.PropsWithChildren<{}> {
   initialData: AppStoreData;
-  htmlElementStyles: React.CSSProperties;
   layoutStyles: SxProps<MUITheme>;
 }
 function OuterLayout({
   children,
   initialData,
-  htmlElementStyles,
   layoutStyles,
 }: outerLayoutProps): React.ReactElement {
   return (
-    <html lang="en" style={htmlElementStyles}>
+    <html lang="en" className={rootLayoutStyles.html}>
       <body>
         <ThemeRegistry>
           <AppStoreProvider initialData={initialData}>
@@ -98,11 +97,7 @@ export default function RootLayout({
   initialData,
 }: RootLayoutProps): React.ReactElement {
   return (
-    <OuterLayout
-      initialData={initialData}
-      htmlElementStyles={useHTMLElementStyles()}
-      layoutStyles={useLayoutStyles()}
-    >
+    <OuterLayout initialData={initialData} layoutStyles={useLayoutStyles()}>
       <InnerLayout drawerChildren={drawerChildren}>{children}</InnerLayout>
     </OuterLayout>
   );
