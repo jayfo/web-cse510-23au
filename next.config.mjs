@@ -22,7 +22,7 @@ const nextConfig = {
 
   // Ensure build and dev always assume a static export.
   output: "export",
-  
+
   // Trailing slashes also create export directory structure.
   trailingSlash: true,
 
