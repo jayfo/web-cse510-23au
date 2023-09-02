@@ -7,7 +7,7 @@ import * as React from "react";
 import RootLayout from "@/components/RootLayout";
 import { appStoreInitialData } from "@/stores/AppStoreInitialData";
 
-import DrawerChildren from "./drawer";
+import Drawer from "./drawer";
 
 // TODO: Pull course title from a configuration
 export const metadata = {
@@ -19,7 +19,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   const initialData = appStoreInitialData();
 
   return (
-    <RootLayout drawerChildren={<DrawerChildren />} initialData={initialData}>
+    <RootLayout drawerChildren={<Drawer />} initialData={initialData}>
       {children}
     </RootLayout>
   );
