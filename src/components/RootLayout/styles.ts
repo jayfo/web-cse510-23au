@@ -78,11 +78,12 @@ export function useLayoutStyles(): SxProps<MUITheme> {
       },
     }),
     // Page title typography.
-    {
+    (theme): SystemStyleObject<MUITheme> => ({
       "#rootLayout-title": {
+        color: theme.palette.primary.contrastText,
         typography: "h3",
       },
-    },
+    }),
     // Container of drawer and main.
     {
       "#rootLayout-container": {

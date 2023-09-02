@@ -50,12 +50,21 @@ export default function Drawer(): React.ReactElement {
     <Box>
       <Stack>
         <ul style={{ padding: "0px", margin: "0px" }}>
-              <li key={"page"} style={{ listStyle: "none" }}>
-                <AppLink href={"#course-overview"}><b>Course Overview</b></AppLink>
-              </li>
+          <li key={"page"} style={{ listStyle: "none" }}>
+            <AppLink href={"#course-overview"}>
+              <b>Course Overview</b>
+            </AppLink>
+          </li>
           {drawerLinks.map((drawerLink, drawerLinkIndex) => {
             return (
-              <li key={drawerLinkIndex} style={{ listStyle: "none", paddingLeft: "10px", paddingTop: "5px" }}>
+              <li
+                key={drawerLinkIndex}
+                style={{
+                  listStyle: "none",
+                  paddingLeft: "10px",
+                  paddingTop: "5px",
+                }}
+              >
                 <AppLink href={drawerLink.href}>{drawerLink.anchor}</AppLink>
               </li>
             );

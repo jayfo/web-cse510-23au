@@ -6,11 +6,13 @@
 
 import * as React from "react";
 
+import AppLink from "@/components/AppLink";
 import AppStoreProvider from "@/components/AppStoreProvider";
 import ThemeRegistry from "@/components/ThemeRegistry";
 import { AppStoreData } from "@/types/AppStore";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
 import Container from "@mui/material/Container";
 import { Theme as MUITheme } from "@mui/material/styles";
 import Toolbar from "@mui/material/Toolbar";
@@ -57,10 +59,12 @@ function InnerLayout({
       <AppBar id="rootLayout-appBar" position="sticky">
         <Container>
           <Toolbar>
-            <Typography id="rootLayout-title" component="div" noWrap>
-              {/* TODO: Pull course title from a configuration */}
-              CSE 510 - Advanced Topics in HCI - Autumn 2023
-            </Typography>
+            <AppLink href="/">
+              <Typography id="rootLayout-title" component="div" noWrap>
+                {/* TODO: Pull course title from a configuration */}
+                CSE 510 - Advanced Topics in HCI - Autumn 2023
+              </Typography>
+            </AppLink>
           </Toolbar>
         </Container>
       </AppBar>
