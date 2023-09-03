@@ -3,8 +3,8 @@ import * as React from "react";
 import { AppLink } from "@/components/AppLink";
 import { Box, Stack } from "@mui/material";
 
-export default function Drawer(): React.ReactElement {
-  const drawerLinks: {
+export default function Sidebar(): React.ReactElement {
+  const sidebarLinks: {
     anchor: React.ReactNode;
     href: string;
   }[] = [
@@ -55,17 +55,17 @@ export default function Drawer(): React.ReactElement {
               <b>Course Overview</b>
             </AppLink>
           </li>
-          {drawerLinks.map((drawerLink, drawerLinkIndex) => {
+          {sidebarLinks.map((sidebarLink, sidebarLinkIndex) => {
             return (
               <li
-                key={drawerLinkIndex}
+                key={sidebarLinkIndex}
                 style={{
                   listStyle: "none",
                   paddingLeft: "10px",
                   paddingTop: "5px",
                 }}
               >
-                <AppLink href={drawerLink.href}>{drawerLink.anchor}</AppLink>
+                <AppLink href={sidebarLink.href}>{sidebarLink.anchor}</AppLink>
               </li>
             );
           })}

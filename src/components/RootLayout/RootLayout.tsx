@@ -12,7 +12,6 @@ import ThemeRegistry from "@/components/ThemeRegistry";
 import { AppStoreData } from "@/types/AppStore";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
 import Container from "@mui/material/Container";
 import { Theme as MUITheme } from "@mui/material/styles";
 import Toolbar from "@mui/material/Toolbar";
@@ -47,12 +46,12 @@ function OuterLayout({
 }
 
 interface innerLayoutProps extends React.PropsWithChildren<{}> {
-  drawerChildren: React.ReactNode;
+  sidebar: React.ReactNode;
 }
 
 function InnerLayout({
   children,
-  drawerChildren,
+  sidebar,
 }: innerLayoutProps): React.ReactElement {
   return (
     <React.Fragment>
@@ -70,9 +69,9 @@ function InnerLayout({
       </AppBar>
       <Container>
         <Box id="rootLayout-container">
-          <Box id="rootLayout-drawer">
-            <Box id="rootLayout-drawer-content" component="nav">
-              {drawerChildren}
+          <Box id="rootLayout-sidebar">
+            <Box id="rootLayout-sidebar-content" component="nav">
+              {sidebar}
             </Box>
           </Box>
           <Box
@@ -91,18 +90,18 @@ function InnerLayout({
 }
 
 interface RootLayoutProps extends React.PropsWithChildren<{}> {
-  drawerChildren: React.ReactNode;
+  sidebar: React.ReactNode;
   initialData: AppStoreData;
 }
 
 export default function RootLayout({
   children,
-  drawerChildren,
+  sidebar,
   initialData,
 }: RootLayoutProps): React.ReactElement {
   return (
     <OuterLayout initialData={initialData} layoutStyles={useLayoutStyles()}>
-      <InnerLayout drawerChildren={drawerChildren}>{children}</InnerLayout>
+      <InnerLayout sidebar={sidebar}>{children}</InnerLayout>
     </OuterLayout>
   );
 }

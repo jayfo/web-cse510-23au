@@ -4,7 +4,7 @@ import { SxProps, useMediaQuery } from "@mui/material";
 import { Theme as MUITheme } from "@mui/material/styles";
 import { SystemStyleObject } from "@mui/system";
 
-const DRAWER_WIDTH = 240;
+const SIDEBAR_WIDTH = 240;
 
 function useAppBarHeight(): 48 | 56 | 64 {
   // The height of the AppBar is controlled by this:
@@ -84,7 +84,7 @@ export function useLayoutStyles(): SxProps<MUITheme> {
         typography: "h3",
       },
     }),
-    // Container of drawer and main.
+    // Container of sidebar and main.
     {
       "#rootLayout-container": {
         display: "flex",
@@ -92,9 +92,9 @@ export function useLayoutStyles(): SxProps<MUITheme> {
     },
     // Drawer is sticky.
     {
-      "#rootLayout-drawer": {
+      "#rootLayout-sidebar": {
         // Hold its width.
-        width: DRAWER_WIDTH,
+        width: SIDEBAR_WIDTH,
         flexShrink: 0,
         "& .MuiDrawer-paper": {
           width: DRAWER_WIDTH,
@@ -122,7 +122,7 @@ export function useLayoutStyles(): SxProps<MUITheme> {
 
     // Consistent styling of the two content regions.
     {
-      "#rootLayout-drawer-content": {
+      "#rootLayout-sidebar-content": {
         ...sxContentElementsMarginPadding,
       },
       "#rootLayout-main-content": {

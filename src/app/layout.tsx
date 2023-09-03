@@ -7,19 +7,21 @@ import * as React from "react";
 import RootLayout from "@/components/RootLayout";
 import { appStoreInitialData } from "@/stores/AppStoreInitialData";
 
-import Drawer from "./drawer";
-
 // TODO: Pull course title from a configuration
 export const metadata = {
   title: "CSE 510 - Advanced Topics in HCI - Autumn 2023",
   description: "CSE 510 - Advanced Topics in HCI - Autumn 2023",
 };
 
-export default function Layout({ children }: { children: React.ReactNode }) {
+interface LayoutProps extends React.PropsWithChildren<{}> {
+  sidebar: React.ReactElement;
+}
+
+export default function Layout({ children, sidebar }: LayoutProps) {
   const initialData = appStoreInitialData();
 
   return (
-    <RootLayout drawerChildren={<Drawer />} initialData={initialData}>
+    <RootLayout sidebar={sidebar} initialData={initialData}>
       {children}
     </RootLayout>
   );
