@@ -1,8 +1,11 @@
+"use client";
+
 import * as React from "react";
 
 import WrapperComponent, {
   assertIsWrapperComponent,
 } from "@/types/WrapperComponent";
+import { lighten } from "@mui/material";
 import Box from "@mui/material/Box";
 
 interface TBDProps extends React.PropsWithChildren<{}> {
@@ -23,13 +26,16 @@ export const TBD = ({
   const resultComponent: React.ReactElement = (
     <Box
       component={component}
-      sx={{
+      sx={(theme) => ({
         // Apply a background.
         // If this background is not appearing,
         // that is generally due to an invalid HTML hierarchy
         // (e.g., <p> cannot contain <div>, <span> cannot contain <p>).
-        backgroundColor: "lightpink",
-      }}
+        //
+        // This is an attempt to match the Alert background:
+        // https://github.com/mui/material-ui/blob/master/packages/mui-material/src/Alert/Alert.js
+        backgroundColor: lighten(theme.palette.warning.light, 0.9),
+      })}
     >
       {children}
     </Box>
