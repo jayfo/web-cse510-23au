@@ -96,12 +96,6 @@ export function useLayoutStyles(): SxProps<MUITheme> {
         // Hold its width.
         width: SIDEBAR_WIDTH,
         flexShrink: 0,
-        "& .MuiDrawer-paper": {
-          width: DRAWER_WIDTH,
-          boxSizing: "border-box",
-          height: "auto",
-          bottom: 0,
-        },
         // Sticky at the top below the AppBar.
         position: "sticky",
         alignSelf: "flex-start",
