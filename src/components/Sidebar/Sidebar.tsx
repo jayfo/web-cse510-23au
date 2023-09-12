@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import AppLink from "@/components/AppLink";
+import { AppLink } from "@/components/links/AppLink";
 import Box from "@mui/material/Box";
 
 import {

@@ -2,8 +2,8 @@
 
 import * as React from "react";
 
-import AppLink from "@/components/AppLink";
 import { useAppStore } from "@/components/AppStoreProvider";
+import { AppLink } from "@/components/links/AppLink";
 import TBD from "@/components/TBD";
 import {
   assertIsCourseStoreLinkKey,

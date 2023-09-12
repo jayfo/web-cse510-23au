@@ -6,8 +6,8 @@
 
 import * as React from "react";
 
-import AppLink from "@/components/AppLink";
 import AppStoreProvider from "@/components/AppStoreProvider";
+import { AppLink } from "@/components/links/AppLink";
 import ThemeRegistry from "@/components/ThemeRegistry";
 import { AppStoreData } from "@/types/AppStore";
 import AppBar from "@mui/material/AppBar";

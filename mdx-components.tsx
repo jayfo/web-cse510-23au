@@ -4,7 +4,7 @@
 
 import * as React from "react";
 
-import AppLink from "@/components/AppLink";
+import { AppLink } from "@/components/links/AppLink";
 import { assertNotNull } from "@/types/Guards";
 import { Typography } from "@mui/material";
 import type { MDXComponents } from "mdx/types";
