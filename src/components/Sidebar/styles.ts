@@ -14,6 +14,12 @@ export const stylesSidebarSiteLinksListItem: React.CSSProperties = {
   fontWeight: "bold",
 };
 
+export const stylesSidebarSiteLinksNestedListItem: React.CSSProperties = {
+  listStyle: "none",
+  margin: "10px 0 10px 0",
+  paddingLeft: "10px",
+};
+
 export const stylesSidebarPageLinksList: React.CSSProperties = {
   margin: "40px 0 0 0",
   padding: "0",

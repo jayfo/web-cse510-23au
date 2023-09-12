@@ -10,6 +10,7 @@ import {
   stylesSidebarPageLinksNestedListItem,
   stylesSidebarSiteLinksList,
   stylesSidebarSiteLinksListItem,
+  stylesSidebarSiteLinksNestedListItem,
 } from "./styles";
 
 type sidebarLink = {
@@ -18,7 +19,7 @@ type sidebarLink = {
 };
 
 interface SidebarProps {
-  siteLinks: sidebarLink[];
+  siteLinks: (sidebarLink | sidebarLink[])[];
   pageLinks: (sidebarLink | sidebarLink[])[];
 }
 
@@ -30,13 +31,32 @@ const Sidebar: React.FunctionComponent<SidebarProps> = ({
     <div style={stylesSidebar}>
       <ul style={stylesSidebarSiteLinksList}>
         {siteLinks.map((siteLinkCurrent, siteLinkIndex) => {
-          return (
-            <li key={siteLinkIndex} style={stylesSidebarSiteLinksListItem}>
-              <AppLink href={siteLinkCurrent.href}>
-                {siteLinkCurrent.anchor}
-              </AppLink>
-            </li>
-          );
+          if (!Array.isArray(siteLinkCurrent)) {
+            return (
+              <li key={siteLinkIndex} style={stylesSidebarSiteLinksListItem}>
+                <AppLink href={siteLinkCurrent.href}>
+                  {siteLinkCurrent.anchor}
+                </AppLink>
+              </li>
+            );
+          } else {
+            const nestedSiteLinks = siteLinkCurrent;
+
+            return nestedSiteLinks.map(
+              (nestedSiteLinkCurrent, nestedSiteLinkIndex) => {
+                return (
+                  <li
+                    key={nestedSiteLinkIndex}
+                    style={stylesSidebarSiteLinksNestedListItem}
+                  >
+                    <AppLink href={nestedSiteLinkCurrent.href}>
+                      {nestedSiteLinkCurrent.anchor}
+                    </AppLink>
+                  </li>
+                );
+              },
+            );
+          }
         })}
       </ul>
       <ul style={stylesSidebarPageLinksList}>
