@@ -9,13 +9,13 @@ import {
   assertIsCourseStoreLinkKey,
   CourseStoreLinkKey,
 } from "@/types/CourseStore";
-import WrapperComponent from "@/types/WrapperComponent";
+import { OuterComponent } from "@/types/OuterComponent";
 import Box from "@mui/material/Box";
 import { observer } from "mobx-react";
 
 interface CourseStoreLinkProps extends React.PropsWithChildren<{}> {
-  component?: WrapperComponent;
-  outerComponent?: WrapperComponent;
+  component?: OuterComponent;
+  outerComponent?: OuterComponent;
   linkKey: CourseStoreLinkKey;
 }
 

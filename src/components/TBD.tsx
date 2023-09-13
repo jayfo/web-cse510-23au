@@ -2,15 +2,13 @@
 
 import * as React from "react";
 
-import WrapperComponent, {
-  assertIsWrapperComponent,
-} from "@/types/WrapperComponent";
+import { assertIsOuterComponent, OuterComponent } from "@/types/OuterComponent";
 import { lighten } from "@mui/material";
 import Box from "@mui/material/Box";
 
 interface TBDProps extends React.PropsWithChildren<{}> {
-  component?: WrapperComponent;
-  outerComponent?: WrapperComponent;
+  component?: OuterComponent;
+  outerComponent?: OuterComponent;
 }
 
 export const TBD = ({
@@ -21,7 +19,7 @@ export const TBD = ({
   outerComponent,
 }: TBDProps): React.ReactElement => {
   // MDX does not enforce this.
-  assertIsWrapperComponent(component);
+  assertIsOuterComponent(component);
 
   const resultComponent: React.ReactElement = (
     <Box
