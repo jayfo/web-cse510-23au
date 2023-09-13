@@ -5,7 +5,7 @@
 import * as React from "react";
 
 import { AppLink } from "@/components/links/AppLink";
-import { assertNotNull } from "@/types/Guards";
+import { assertNotNullNotUndefined } from "@/types/Guards";
 import { Typography } from "@mui/material";
 import type { MDXComponents } from "mdx/types";
 
@@ -16,7 +16,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
 
     // MDX links should all be our AppLink.
     a: ({ children, href }) => {
-      assertNotNull(href);
+      assertNotNullNotUndefined(href);
 
       return <AppLink href={href}>{children}</AppLink>;
     },
