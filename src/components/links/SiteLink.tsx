@@ -24,6 +24,7 @@ export const SiteLink: React.FunctionComponent<SiteLinkProps> = ({
     assertIsOuterComponent(outerComponent);
   }
 
+  // Actual href retrieved from linkKey.
   const href = linkKey.href;
 
   const resultComponentAnchor: React.ReactNode = (() => {
