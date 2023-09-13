@@ -74,5 +74,3 @@ export const CourseStoreLink = observer(
     }
   },
 );
-
-export default CourseStoreLink;
