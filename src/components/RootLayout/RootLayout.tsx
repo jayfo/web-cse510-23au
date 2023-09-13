@@ -7,8 +7,9 @@
 import * as React from "react";
 
 import AppStoreProvider from "@/components/AppStoreProvider";
-import { AppLink } from "@/components/links/AppLink";
+import { SiteLink } from "@/components/links/SiteLink";
 import ThemeRegistry from "@/components/ThemeRegistry";
+import { SiteLinks } from "@/data/SiteLinks";
 import { AppStoreData } from "@/types/AppStore";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
@@ -58,12 +59,13 @@ function InnerLayout({
       <AppBar id="rootLayout-appBar" position="sticky">
         <Container>
           <Toolbar>
-            <AppLink href="/">
+            {/* TODO: Pull root link target from a configuration */}
+            <SiteLink linkKey={SiteLinks.homeTop}>
               <Typography id="rootLayout-title" component="div" noWrap>
                 {/* TODO: Pull course title from a configuration */}
                 CSE 510 - Advanced Topics in HCI - Autumn 2023
               </Typography>
-            </AppLink>
+            </SiteLink>
           </Toolbar>
         </Container>
       </AppBar>
