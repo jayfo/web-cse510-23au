@@ -1,6 +1,7 @@
 import * as React from "react";
 
 import { AppLink } from "@/components/links/AppLink";
+import { SiteLinkKey } from "@/types/SiteLinks";
 import Box from "@mui/material/Box";
 
 import {
@@ -13,17 +14,17 @@ import {
   stylesSidebarSiteLinksNestedListItem,
 } from "./styles";
 
-type sidebarLink = {
+type SidebarLink = {
   anchor: React.ReactNode;
   href: string;
 };
 
 interface SidebarProps {
-  siteLinks: (sidebarLink | sidebarLink[])[];
-  pageLinks: (sidebarLink | sidebarLink[])[];
+  siteLinks: (SiteLinkKey | SiteLinkKey[])[];
+  pageLinks: (SidebarLink | SidebarLink[])[];
 }
 
-const Sidebar: React.FunctionComponent<SidebarProps> = ({
+export const Sidebar: React.FunctionComponent<SidebarProps> = ({
   siteLinks,
   pageLinks,
 }) => {
@@ -92,5 +93,3 @@ const Sidebar: React.FunctionComponent<SidebarProps> = ({
     </div>
   );
 };
-
-export default Sidebar;

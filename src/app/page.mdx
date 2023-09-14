@@ -3,9 +3,11 @@ import Image from "next-image-export-optimizer";
 
 import { AppLink } from "@/components/links/AppLink";
 import { CourseStoreLink } from "@/components/links/CourseStoreLink";
+import { SiteLink } from "@/components/links/SiteLink";
 import { TBD } from "@/components/TBD";
 import UnderDevelopment from "@/components/UnderDevelopment";
 import { Paths } from "@/paths";
+import { SiteLinks} from "@/data/SiteLinks";
 
 import imgPhotoJames from "public/images/photo_james.jpg";
 import imgPhotoShaan from "public/images/photo_shaan.jpg";
@@ -70,7 +72,8 @@ We will emphasize learning through discussion and feedback in all aspects of the
   <TBD>Location TBD.</TBD>
   {/* [CSE2](https://www.washington.edu/maps/#!/cse2) Room [G04](https://www.washington.edu/classroom/CSE2+G04). */}
 
-Class may be conducted via Zoom when indicated in the [Calendar](/calendar),
+Class may be conducted via Zoom when indicated in the
+<SiteLink linkKey={SiteLinks.calendarTop} />,
 and we may support participation via Zoom as an accommodation (e.g., due to illness).
 If so, we will use meeting information provided by email and in
 <CourseStoreLink linkKey="linkCanvas">Canvas</CourseStoreLink>.
@@ -142,7 +145,8 @@ The overall course grade will be computed as follows:
 Our goal is for this course to provide an opportunity for learning without undermining wellness or safety.
 
 Consistent with university guidance and policies, this is an in-person course.
-Class may be conducted via Zoom when indicated in the [Calendar](/calendar)
+Class may be conducted via Zoom when indicated in the
+<SiteLink linkKey={SiteLinks.calendarTop} />
 (e.g., due to emerging UW policies, due to a need or request from a guest presenter).
 
 This course heavily emphasizes discussion and participation.
