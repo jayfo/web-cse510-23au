@@ -59,7 +59,6 @@ function InnerLayout({
       <AppBar id="rootLayout-appBar" position="sticky">
         <Container>
           <Toolbar>
-            {/* TODO: Pull root link target from a configuration */}
             <SiteLink linkKey={SiteLinks.homeTop}>
               <Typography id="rootLayout-title" component="div" noWrap>
                 {/* TODO: Pull course title from a configuration */}
