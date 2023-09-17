@@ -1,6 +1,6 @@
 import { CourseStoreData } from "@/types/CourseStore";
 
-const courseData: CourseStoreData = {
+export const courseStoreData: CourseStoreData = {
   // Link to course Canvas. No trailing slash.
   linkCanvas: "https://canvas.uw.edu/courses/1665830",
   // Link to course GitHub.
@@ -9,5 +9,3 @@ const courseData: CourseStoreData = {
   linkUniversitySyllabusGuidelines:
     "https://registrar.washington.edu/curriculum/syllabus-guidelines/",
 };
-
-export default courseData;
