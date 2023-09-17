@@ -19,5 +19,3 @@ export const UnderDevelopment = ({
     return null;
   }
 };
-
-export default UnderDevelopment;
