@@ -1,36 +1,34 @@
 import { SiteLinkKey } from "@/types/SiteLinks";
 
-export class SiteLinksImpl {
-  homeTop: SiteLinkKey = {
+export const SiteLinks = {
+  homeTop: {
     href: "/#course-overview",
     anchor: "Course Overview",
-  };
+  },
 
-  assignmentsTop: SiteLinkKey = {
+  assignmentsTop: {
     href: "/assignments/#assignments",
     anchor: "Assignments",
-  };
-  assignmentsReadingsTop: SiteLinkKey = {
+  },
+  assignmentsReadingsTop: {
     href: "/assignments/readings/#readings",
     anchor: "Readings",
-  };
-  assignmentsProjectTop: SiteLinkKey = {
+  },
+  assignmentsProjectTop: {
     href: "/assignments/project/#project",
     anchor: "Project",
-  };
-  assignmentsStatisticsLabTop: SiteLinkKey = {
+  },
+  assignmentsStatisticsLabTop: {
     href: "/assignments/statisticslab/#statistics-lab",
     anchor: "Statistics Lab",
-  };
-  assignmentsExamTop: SiteLinkKey = {
+  },
+  assignmentsExamTop: {
     href: "/assignments/exam/#exam",
     anchor: "Exam",
-  };
+  },
 
-  calendarTop: SiteLinkKey = {
+  calendarTop: {
     href: "/calendar/#calendar",
     anchor: "Calendar",
-  };
-}
-
-export const SiteLinks = new SiteLinksImpl();
+  },
+} as const;
