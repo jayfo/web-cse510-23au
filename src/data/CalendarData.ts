@@ -96,7 +96,7 @@ export const calendarData: {
 
   holidays: [
     {
-      date: verifyCalendarDate("2023-10-10", "Tue"),
+      date: verifyCalendarDate("2023-11-10", "Tue"),
       type: "holiday",
       title: "Veterans Day",
     },
@@ -131,6 +131,11 @@ export const calendarData: {
       title: "Contributions in Human-Computer Interaction",
     },
     // Week 3
+    {
+      date: verifyCalendarDate("2023-10-10", "Tue"),
+      type: "lecture",
+      title: "Human-Computer Interaction History",
+    },
     {
       date: verifyCalendarDate("2023-10-12", "Thu"),
       type: "lecture",
