@@ -96,9 +96,9 @@ export const calendarData: {
 
   holidays: [
     {
-      date: verifyCalendarDate("2023-11-10", "Tue"),
+      date: verifyCalendarDate("2023-11-10", "Fri"),
       type: "holiday",
-      title: "Veterans Day",
+      title: "Veterans Day Observed",
     },
     {
       date: verifyCalendarDate("2023-11-23", "Thu"),
