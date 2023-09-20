@@ -33,6 +33,24 @@ export type BaseCalendarItemGuests =
     };
 
 /**
+ * One or more times and locations potentially associated with a calendar item.
+ */
+export type BaseCalendarItemTimeAndLocations =
+  | {}
+  | {
+      timeAndLocation: {
+        time: string;
+        location: string;
+      };
+    }
+  | {
+      timeAndLocations: {
+        time: string;
+        location: string;
+      }[];
+    };
+
+/**
  * Calendar item types.
  */
 
@@ -45,7 +63,8 @@ export type LectureCalendarItem = {
   type: "lecture";
   title: string;
 } & BaseCalendarItemDates &
-  BaseCalendarItemGuests;
+  BaseCalendarItemGuests &
+  BaseCalendarItemTimeAndLocations;
 
 export type CalendarItem = HolidayCalendarItem | LectureCalendarItem;
 

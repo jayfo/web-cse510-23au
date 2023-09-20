@@ -24,6 +24,11 @@ const dayOfWeekValues = [
 ] as const;
 type dayOfWeek = (typeof dayOfWeekValues)[number];
 
+const LECTURE_TIME_AND_LOCATION = {
+  time: "10:00 to 11:20",
+  location: "CSE2/Gates G04",
+}
+
 export function parseCalendarDate(calendarDate: CalendarDate): Date {
   const parsedDate = datefnsParse(calendarDate, "yyyy-MM-dd", new Date());
   assert(datefnsIsValid(parsedDate), `Invalid date: ${calendarDate}`);
@@ -116,72 +121,85 @@ export const calendarData: {
     // Week 1
     {
       date: verifyCalendarDate("2023-09-28", "Thu"),
+      timeAndLocation: LECTURE_TIME_AND_LOCATION,
       type: "lecture",
       title: "Introductions and Overview",
     },
     // Week 2
     {
       date: verifyCalendarDate("2023-10-03", "Tue"),
+      timeAndLocation: LECTURE_TIME_AND_LOCATION,
       type: "lecture",
       title: "Visions of Human-Computer Interaction",
     },
     {
       date: verifyCalendarDate("2023-10-05", "Thu"),
+      timeAndLocation: LECTURE_TIME_AND_LOCATION,
       type: "lecture",
       title: "Contributions in Human-Computer Interaction",
     },
     // Week 3
     {
       date: verifyCalendarDate("2023-10-10", "Tue"),
+      timeAndLocation: LECTURE_TIME_AND_LOCATION,
       type: "lecture",
       title: "Human-Computer Interaction History",
     },
     {
       date: verifyCalendarDate("2023-10-12", "Thu"),
+      timeAndLocation: LECTURE_TIME_AND_LOCATION,
       type: "lecture",
       title: "In-Class Finalization of Project Proposals",
     },
     // Week 4
     {
       date: verifyCalendarDate("2023-10-17", "Tue"),
+      timeAndLocation: LECTURE_TIME_AND_LOCATION,
       type: "lecture",
       title: "Usability Evaluation Considered Harmful",
     },
     {
       date: verifyCalendarDate("2023-10-19", "Thu"),
+      timeAndLocation: LECTURE_TIME_AND_LOCATION,
       type: "lecture",
       title: "Research Topic: TBD",
     },
     // Week 5
     {
       date: verifyCalendarDate("2023-10-24", "Tue"),
+      timeAndLocation: LECTURE_TIME_AND_LOCATION,
       type: "lecture",
       title: "Research Topic: TBD",
     },
     {
       date: verifyCalendarDate("2023-10-26", "Thu"),
+      timeAndLocation: LECTURE_TIME_AND_LOCATION,
       type: "lecture",
       title: "Research Topic: TBD",
     },
     // Week 7
     {
       date: verifyCalendarDate("2023-11-07", "Tue"),
+      timeAndLocation: LECTURE_TIME_AND_LOCATION,
       type: "lecture",
       title: "Research Topic: TBD",
     },
     {
       date: verifyCalendarDate("2023-11-09", "Thu"),
+      timeAndLocation: LECTURE_TIME_AND_LOCATION,
       type: "lecture",
       title: "Research Topic: TBD",
     },
     // Week 8
     {
       date: verifyCalendarDate("2023-11-14", "Tue"),
+      timeAndLocation: LECTURE_TIME_AND_LOCATION,
       type: "lecture",
       title: "Research Topic: TBD",
     },
     {
       date: verifyCalendarDate("2023-11-16", "Thu"),
+      timeAndLocation: LECTURE_TIME_AND_LOCATION,
       type: "lecture",
       title: "Research Topic: Designing with Children",
       guest: {
@@ -192,6 +210,7 @@ export const calendarData: {
     // Week 9
     {
       date: verifyCalendarDate("2023-11-21", "Tue"),
+      timeAndLocation: LECTURE_TIME_AND_LOCATION,
       type: "lecture",
       title: "Research Topic: CSCW and Social Computing",
       guest: {
@@ -202,11 +221,13 @@ export const calendarData: {
     // Week 11
     {
       date: verifyCalendarDate("2023-12-05", "Tue"),
+      timeAndLocation: LECTURE_TIME_AND_LOCATION,
       type: "lecture",
       title: "Research Topic: TBD",
     },
     {
       date: verifyCalendarDate("2023-12-07", "Thu"),
+      timeAndLocation: LECTURE_TIME_AND_LOCATION,
       type: "lecture",
       title: "Research Topic: TBD",
     },
@@ -219,6 +240,7 @@ export const calendarData: {
         verifyCalendarDate("2023-11-28", "Tue"),
         verifyCalendarDate("2023-11-30", "Thu"),
       ],
+      timeAndLocation: LECTURE_TIME_AND_LOCATION,
       type: "lecture",
       title: "Project Milestone Presentations",
     },

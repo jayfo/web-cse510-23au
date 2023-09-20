@@ -60,6 +60,30 @@ export const CourseCalendar: React.FunctionComponent = () => {
     );
   }
 
+  function renderTimeAndLocations(calendarItem: CalendarItem): React.ReactNode {
+    const calendarItemTimeAndLocations = (() => {
+      if ("timeAndLocation" in calendarItem) {
+        return [calendarItem.timeAndLocation];
+      } else if ("timeAndLocations" in calendarItem) {
+        return calendarItem.timeAndLocations;
+      } else {
+        return undefined;
+      }
+    })();
+
+    return (
+      calendarItemTimeAndLocations &&
+      calendarItemTimeAndLocations.map(
+        (timeAndLocationCurrent, indexCurrent): React.ReactElement => {
+          return <Box key={indexCurrent} sx={{fontSize: "0.875rem"}}>
+            <Box>{timeAndLocationCurrent.time}</Box>
+            <Box>{timeAndLocationCurrent.location}</Box>
+          </Box>
+        },
+      )
+    );
+  }
+
   function renderHolidayCalendarDate(
     calendarDateCurrent: CalendarDate,
     dateCalendarItems: CalendarItem[],
@@ -108,6 +132,7 @@ export const CourseCalendar: React.FunctionComponent = () => {
           >
             {formatCalendarDate(calendarDateCurrent, CALENDAR_DATE_FORMAT)}
           </Typography>
+          {renderTimeAndLocations(lectureCalendarItem)}
         </Grid>
         <Grid item xs={10}>
           <Typography
