@@ -2,6 +2,7 @@ import * as React from "react";
 
 import { ok as assert } from "assert";
 
+import { AppLink } from "@/components/links/AppLink";
 import {
   calendarData,
   calendarDates,
@@ -23,6 +24,42 @@ import { Alert, Box, Collapse, Grid, Paper, Typography } from "@mui/material";
 const CALENDAR_DATE_FORMAT = "EEE MMM d";
 
 export const CourseCalendar: React.FunctionComponent = () => {
+  function renderGuests(calendarItem: CalendarItem): React.ReactNode {
+    const calendarItemGuests = (() => {
+      if ("guest" in calendarItem) {
+        return [calendarItem.guest];
+      } else if ("guests" in calendarItem) {
+        return calendarItem.guests;
+      } else {
+        return undefined;
+      }
+    })();
+
+    return (
+      calendarItemGuests &&
+      calendarItemGuests.map(
+        (guestCurrent, indexCurrent): React.ReactElement => {
+          return (
+            <Alert key={indexCurrent} severity="info">
+              Guest:{" "}
+              {((): React.ReactNode => {
+                if (guestCurrent.link) {
+                  return (
+                    <AppLink href={guestCurrent.link}>
+                      {guestCurrent.name}
+                    </AppLink>
+                  );
+                } else {
+                  return guestCurrent.name;
+                }
+              })()}
+            </Alert>
+          );
+        },
+      )
+    );
+  }
+
   function renderHolidayCalendarDate(
     calendarDateCurrent: CalendarDate,
     dateCalendarItems: CalendarItem[],
@@ -80,6 +117,7 @@ export const CourseCalendar: React.FunctionComponent = () => {
           >
             {lectureCalendarItem.title}
           </Typography>
+          {renderGuests(lectureCalendarItem)}
         </Grid>
 
         {/*<Grid item xs={10}>*/}

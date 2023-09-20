@@ -15,6 +15,24 @@ export type BaseCalendarItemDates =
     };
 
 /**
+ * One or more guests potentially associated with a calendar item.
+ */
+export type BaseCalendarItemGuests =
+  | {}
+  | {
+      guest: {
+        name: string;
+        link?: string;
+      };
+    }
+  | {
+      guests: {
+        name: string;
+        link?: string;
+      }[];
+    };
+
+/**
  * Calendar item types.
  */
 
@@ -26,7 +44,8 @@ export type HolidayCalendarItem = {
 export type LectureCalendarItem = {
   type: "lecture";
   title: string;
-} & BaseCalendarItemDates;
+} & BaseCalendarItemDates &
+  BaseCalendarItemGuests;
 
 export type CalendarItem = HolidayCalendarItem | LectureCalendarItem;
 
