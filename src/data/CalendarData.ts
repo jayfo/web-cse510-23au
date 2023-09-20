@@ -183,7 +183,11 @@ export const calendarData: {
     {
       date: verifyCalendarDate("2023-11-16", "Thu"),
       type: "lecture",
-      title: "Research Topic: TBD",
+      title: "Research Topic: Designing with Children",
+      guest: {
+        name: "Jason Yip",
+        link: "http://bigyipper.com/",
+      },
     },
     // Week 9
     {
