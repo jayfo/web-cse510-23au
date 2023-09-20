@@ -189,7 +189,11 @@ export const calendarData: {
     {
       date: verifyCalendarDate("2023-11-21", "Tue"),
       type: "lecture",
-      title: "Research Topic: TBD",
+      title: "Research Topic: CSCW and Social Computing",
+      guest: {
+        name: "Mako Hill",
+        link: "https://mako.cc/",
+      },
     },
     // Week 11
     {
