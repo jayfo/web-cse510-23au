@@ -1,5 +1,6 @@
 import { ok as assert } from "assert";
 
+import ContentNoReading from "@/contentcomponents/NoReading.mdx";
 import {
   CalendarDate,
   CalendarItem,
@@ -27,7 +28,7 @@ type dayOfWeek = (typeof dayOfWeekValues)[number];
 const LECTURE_TIME_AND_LOCATION = {
   time: "10:00 to 11:20",
   location: "CSE2/Gates G04",
-}
+};
 
 export function parseCalendarDate(calendarDate: CalendarDate): Date {
   const parsedDate = datefnsParse(calendarDate, "yyyy-MM-dd", new Date());
@@ -124,6 +125,7 @@ export const calendarData: {
       timeAndLocation: LECTURE_TIME_AND_LOCATION,
       type: "lecture",
       title: "Introductions and Overview",
+      contentNonstandard: <ContentNoReading />,
     },
     // Week 2
     {
@@ -143,13 +145,13 @@ export const calendarData: {
       date: verifyCalendarDate("2023-10-10", "Tue"),
       timeAndLocation: LECTURE_TIME_AND_LOCATION,
       type: "lecture",
-      title: "Human-Computer Interaction History",
+      title: "In-Class Work on Project Proposals",
     },
     {
       date: verifyCalendarDate("2023-10-12", "Thu"),
       timeAndLocation: LECTURE_TIME_AND_LOCATION,
       type: "lecture",
-      title: "In-Class Finalization of Project Proposals",
+      title: "Human-Computer Interaction History",
     },
     // Week 4
     {

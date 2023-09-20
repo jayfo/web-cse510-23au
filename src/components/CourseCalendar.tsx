@@ -24,6 +24,16 @@ import { Alert, Box, Collapse, Grid, Paper, Typography } from "@mui/material";
 const CALENDAR_DATE_FORMAT = "EEE MMM d";
 
 export const CourseCalendar: React.FunctionComponent = () => {
+  function renderContentNonstandard(
+    calendarItem: CalendarItem,
+  ): React.ReactNode {
+    if ("contentNonstandard" in calendarItem) {
+      return calendarItem.contentNonstandard;
+    } else {
+      return undefined;
+    }
+  }
+
   function renderGuests(calendarItem: CalendarItem): React.ReactNode {
     const calendarItemGuests = (() => {
       if ("guest" in calendarItem) {
@@ -75,10 +85,12 @@ export const CourseCalendar: React.FunctionComponent = () => {
       calendarItemTimeAndLocations &&
       calendarItemTimeAndLocations.map(
         (timeAndLocationCurrent, indexCurrent): React.ReactElement => {
-          return <Box key={indexCurrent} sx={{fontSize: "0.875rem"}}>
-            <Box>{timeAndLocationCurrent.time}</Box>
-            <Box>{timeAndLocationCurrent.location}</Box>
-          </Box>
+          return (
+            <Box key={indexCurrent} sx={{ fontSize: "0.875rem" }}>
+              <Box>{timeAndLocationCurrent.time}</Box>
+              <Box>{timeAndLocationCurrent.location}</Box>
+            </Box>
+          );
         },
       )
     );

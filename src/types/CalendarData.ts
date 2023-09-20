@@ -1,3 +1,5 @@
+import * as React from "react";
+
 /**
  * Store calendar dates as YYYY-MM-DD strings (e.g., "2023-09-28").
  */
@@ -59,12 +61,17 @@ export type HolidayCalendarItem = {
   title: string;
 } & BaseCalendarItemDates;
 
+export type LectureCalendarItemContent =
+  | {}
+  | { contentNonstandard: React.ReactNode };
+
 export type LectureCalendarItem = {
   type: "lecture";
   title: string;
 } & BaseCalendarItemDates &
   BaseCalendarItemGuests &
-  BaseCalendarItemTimeAndLocations;
+  BaseCalendarItemTimeAndLocations &
+  LectureCalendarItemContent;
 
 export type CalendarItem = HolidayCalendarItem | LectureCalendarItem;
 
