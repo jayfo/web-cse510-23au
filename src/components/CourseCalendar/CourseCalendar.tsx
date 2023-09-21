@@ -4,6 +4,8 @@ import * as React from "react";
 
 import { ok as assert } from "assert";
 
+import { CalendarItemGuests } from "@/components/CourseCalendar/CalendarItemGuests";
+import { CalendarItemTimeAndLocations } from "@/components/CourseCalendar/CalendarItemTimeAndLocations";
 import { AppLink } from "@/components/links/AppLink";
 import {
   calendarData,
@@ -34,68 +36,6 @@ export const CourseCalendar: React.FunctionComponent = () => {
     } else {
       return undefined;
     }
-  }
-
-  function renderGuests(calendarItem: CalendarItem): React.ReactNode {
-    const calendarItemGuests = (() => {
-      if ("guest" in calendarItem) {
-        return [calendarItem.guest];
-      } else if ("guests" in calendarItem) {
-        return calendarItem.guests;
-      } else {
-        return undefined;
-      }
-    })();
-
-    return (
-      calendarItemGuests &&
-      calendarItemGuests.map(
-        (guestCurrent, indexCurrent): React.ReactElement => {
-          return (
-            <Alert key={indexCurrent} severity="info">
-              Guest:{" "}
-              {((): React.ReactNode => {
-                if (guestCurrent.link) {
-                  return (
-                    <AppLink href={guestCurrent.link}>
-                      {guestCurrent.name}
-                    </AppLink>
-                  );
-                } else {
-                  return guestCurrent.name;
-                }
-              })()}
-            </Alert>
-          );
-        },
-      )
-    );
-  }
-
-  function renderTimeAndLocations(calendarItem: CalendarItem): React.ReactNode {
-    const calendarItemTimeAndLocations = (() => {
-      if ("timeAndLocation" in calendarItem) {
-        return [calendarItem.timeAndLocation];
-      } else if ("timeAndLocations" in calendarItem) {
-        return calendarItem.timeAndLocations;
-      } else {
-        return undefined;
-      }
-    })();
-
-    return (
-      calendarItemTimeAndLocations &&
-      calendarItemTimeAndLocations.map(
-        (timeAndLocationCurrent, indexCurrent): React.ReactElement => {
-          return (
-            <Box key={indexCurrent} sx={{ fontSize: "0.875rem" }}>
-              <Box>{timeAndLocationCurrent.time}</Box>
-              <Box>{timeAndLocationCurrent.location}</Box>
-            </Box>
-          );
-        },
-      )
-    );
   }
 
   function renderHolidayCalendarDate(
@@ -233,7 +173,9 @@ export const CourseCalendar: React.FunctionComponent = () => {
                   },
                 }}
               >
-                {renderTimeAndLocations(lectureCalendarItem)}
+                <CalendarItemTimeAndLocations
+                  calendarItem={lectureCalendarItem}
+                />
               </Grid>
               <Grid
                 item
@@ -245,7 +187,7 @@ export const CourseCalendar: React.FunctionComponent = () => {
                   },
                 }}
               >
-                {renderGuests(lectureCalendarItem)}
+                <CalendarItemGuests calendarItem={lectureCalendarItem} />
                 {renderContentNonstandard(lectureCalendarItem)}
               </Grid>
             </Grid>
