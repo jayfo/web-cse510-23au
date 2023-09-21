@@ -104,7 +104,12 @@ export const CourseCalendar: React.FunctionComponent = () => {
     holidayCalendarItem: HolidayCalendarItem,
   ): React.ReactElement {
     return (
-      <Grid item container key={calendarDateCurrent} sx={{ marginLeft: 2, marginRight: 2 }}>
+      <Grid
+        item
+        container
+        key={calendarDateCurrent}
+        sx={{ marginLeft: 2, marginRight: 2 }}
+      >
         <Grid item xs={2}>
           <Typography
             id={idAnchorText(
