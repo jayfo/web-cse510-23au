@@ -64,9 +64,9 @@ export function useLayoutStyles(): SxProps<MUITheme> {
   const sxContentElementsMarginPadding: SystemStyleObject<MUITheme> = {
     // Apply padding
     // and force 0 margin top for first child.
-    p: 3,
+    padding: 3,
     "& > :first-child": {
-      mt: 0,
+      marginTop: 0,
     },
   };
 
