@@ -1,3 +1,5 @@
+"use client";
+
 import * as React from "react";
 
 import { ok as assert } from "assert";
@@ -102,14 +104,14 @@ export const CourseCalendar: React.FunctionComponent = () => {
     holidayCalendarItem: HolidayCalendarItem,
   ): React.ReactElement {
     return (
-      <Grid item container key={calendarDateCurrent}>
+      <Grid item container key={calendarDateCurrent} sx={{ marginLeft: 2, marginRight: 2 }}>
         <Grid item xs={2}>
           <Typography
             id={idAnchorText(
               formatCalendarDate(calendarDateCurrent, CALENDAR_DATE_FORMAT),
             )}
             component="h2"
-            sx={{ typography: "h3", color: "lightgrey" }}
+            sx={{ typography: "h3", color: "#aaaaaa" }}
           >
             {formatCalendarDate(calendarDateCurrent, CALENDAR_DATE_FORMAT)}
           </Typography>
@@ -118,7 +120,7 @@ export const CourseCalendar: React.FunctionComponent = () => {
           <Typography
             id={idAnchorText(holidayCalendarItem.title)}
             component="h2"
-            sx={{ typography: "h3", color: "lightgrey" }}
+            sx={{ typography: "h3", color: "#aaaaaa" }}
           >
             {`Holiday: ${holidayCalendarItem.title}`}
           </Typography>
@@ -132,55 +134,118 @@ export const CourseCalendar: React.FunctionComponent = () => {
     dateCalendarItems: CalendarItem[],
     lectureCalendarItem: LectureCalendarItem,
   ): React.ReactElement {
-    return (
-      <Grid item container key={calendarDateCurrent}>
-        <Grid item xs={2}>
-          <Typography
-            id={idAnchorText(
-              formatCalendarDate(calendarDateCurrent, CALENDAR_DATE_FORMAT),
-            )}
-            component="h2"
-            sx={{ typography: "h3" }}
-          >
-            {formatCalendarDate(calendarDateCurrent, CALENDAR_DATE_FORMAT)}
-          </Typography>
-          {renderTimeAndLocations(lectureCalendarItem)}
-        </Grid>
-        <Grid item xs={10}>
-          <Typography
-            id={idAnchorText(lectureCalendarItem.title)}
-            component="h2"
-            sx={{ typography: "h3" }}
-          >
-            {lectureCalendarItem.title}
-          </Typography>
-          {renderGuests(lectureCalendarItem)}
-        </Grid>
+    const [expanded, setExpanded] = React.useState<boolean>(
+      true,
+      // calendarDateCurrent.date.diffNow("days").days >= -1
+    );
 
-        {/*<Grid item xs={10}>*/}
-        {/*  <Box*/}
-        {/*    sx={{*/}
-        {/*      display: "flex",*/}
-        {/*      alignItems: "baseline",*/}
-        {/*      justifyContent: "space-between",*/}
-        {/*    }}*/}
-        {/*  >*/}
-        {/*    <h2 id={anchorText(calendarDateCurrent.dateTitle)}>*/}
-        {/*      {calendarDateCurrent.dateTitle}*/}
-        {/*    </h2>*/}
-        {/*    <ExpandCircleDownOutlined*/}
-        {/*      // onClick={toggleExpanded}*/}
-        {/*      sx={{ transform: rotation }}*/}
-        {/*    />*/}
-        {/*  </Box>*/}
-        {/*  <Collapse in={expanded} mountOnEnter unmountOnExit>*/}
-        {/*    /!*{renderVirtual(calendarDateCurrent)}*!/*/}
-        {/*    /!*{renderAwayJames(calendarDateCurrent)}*!/*/}
-        {/*    /!*{renderGuest(calendarDateCurrent)}*!/*/}
-        {/*    /!*{renderContent(calendarDateCurrent)}*!/*/}
-        {/*    /!*{renderAdditionalResources(calendarDateCurrent)}*!/*/}
-        {/*  </Collapse>*/}
-        {/*</Grid>*/}
+    const toggleExpanded = () => {
+      setExpanded(!expanded);
+    };
+
+    const rotation = (() => {
+      if (expanded) {
+        return "rotate(180deg)";
+      } else {
+        return "rotate(0deg)";
+      }
+    })();
+
+    return (
+      <Grid
+        item
+        xs={12}
+        key={calendarDateCurrent}
+        sx={{ marginBottom: 2, marginTop: 2 }}
+      >
+        <Paper sx={{ padding: 2 }}>
+          <Grid container>
+            <Grid item xs={2}>
+              <Box
+                sx={{
+                  display: "flex",
+                  alignItems: "flex-end",
+                  height: 1,
+                  "& > :first-child": {
+                    marginTop: 0,
+                    marginBottom: 0,
+                  },
+                }}
+              >
+                <Typography
+                  id={idAnchorText(
+                    formatCalendarDate(
+                      calendarDateCurrent,
+                      CALENDAR_DATE_FORMAT,
+                    ),
+                  )}
+                  component="h2"
+                  sx={{ typography: "h3" }}
+                >
+                  {formatCalendarDate(
+                    calendarDateCurrent,
+                    CALENDAR_DATE_FORMAT,
+                  )}
+                </Typography>
+              </Box>
+            </Grid>
+            <Grid item xs={10}>
+              <Box
+                sx={{
+                  display: "flex",
+                  alignItems: "flex-end",
+                  height: 1,
+                  "& > :first-child": {
+                    marginTop: 0,
+                    marginBottom: 0,
+                  },
+                  justifyContent: "space-between",
+                }}
+              >
+                <Typography
+                  id={idAnchorText(lectureCalendarItem.title)}
+                  component="h2"
+                  sx={{ typography: "h3" }}
+                >
+                  {lectureCalendarItem.title}
+                </Typography>
+                <ExpandCircleDownOutlined
+                  onClick={toggleExpanded}
+                  sx={{ transform: rotation }}
+                />
+              </Box>
+            </Grid>
+          </Grid>
+          <Collapse in={expanded} mountOnEnter unmountOnExit>
+            <Grid container sx={{ marginTop: 2 }}>
+              <Grid
+                item
+                xs={2}
+                sx={{
+                  "& > :first-child": {
+                    marginTop: 0,
+                    marginBottom: 0,
+                  },
+                }}
+              >
+                {renderTimeAndLocations(lectureCalendarItem)}
+              </Grid>
+              <Grid
+                item
+                xs={10}
+                sx={{
+                  "& > :first-child": {
+                    marginTop: 0,
+                    marginBottom: 0,
+                  },
+                }}
+              >
+                {renderGuests(lectureCalendarItem)}
+                {renderContentNonstandard(lectureCalendarItem)}
+              </Grid>
+            </Grid>
+          </Collapse>
+        </Paper>
       </Grid>
     );
   }
