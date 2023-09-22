@@ -184,20 +184,32 @@ export const calendarData: {
       date: verifyCalendarDate("2023-11-07", "Tue"),
       timeAndLocation: LECTURE_TIME_AND_LOCATION,
       type: "lecture",
-      title: "Research Topic: TBD",
+      title: "Research Topic: Accessibility",
+      guest: {
+        name: "Martez Mott",
+        link: "http://www.martezmott.com/",
+      },
     },
     {
       date: verifyCalendarDate("2023-11-09", "Thu"),
       timeAndLocation: LECTURE_TIME_AND_LOCATION,
       type: "lecture",
-      title: "Research Topic: TBD",
+      title: "Research Topic: Computing Education and Learning",
+      guest: {
+        name: "Ben Shapiro",
+        link: "https://benshapi.ro/",
+      },
     },
     // Week 8
     {
       date: verifyCalendarDate("2023-11-14", "Tue"),
       timeAndLocation: LECTURE_TIME_AND_LOCATION,
       type: "lecture",
-      title: "Research Topic: TBD",
+      title: "Research Topic: Interaction with AI",
+      guest: {
+        name: "Mitchell Gordon",
+        link: "https://mgordon.me/",
+      },
     },
     {
       date: verifyCalendarDate("2023-11-16", "Thu"),
