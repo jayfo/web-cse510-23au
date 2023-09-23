@@ -7,7 +7,6 @@ import { lighten } from "@mui/material";
 import Box from "@mui/material/Box";
 
 interface TBDProps extends React.PropsWithChildren<{}> {
-  component?: OuterComponent;
   outerComponent?: OuterComponent;
 }
 
