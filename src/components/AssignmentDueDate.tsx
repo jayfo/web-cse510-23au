@@ -23,7 +23,11 @@ export const AssignmentDueDate: React.FunctionComponent<
   outerComponent = undefined,
 }) => {
   const resultComponent: React.ReactElement = (() => {
-    return <React.Fragment>{formatCalendarDate(assignmentKey.date, ASSIGNMENT_DATE_FORMAT)}</React.Fragment>;
+    return (
+      <React.Fragment>
+        {formatCalendarDate(assignmentKey.date, ASSIGNMENT_DATE_FORMAT)}
+      </React.Fragment>
+    );
   })();
 
   if (outerComponent) {

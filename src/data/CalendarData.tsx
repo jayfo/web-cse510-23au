@@ -3,6 +3,7 @@ import { ok as assert } from "assert";
 import { default as ContentNoReading } from "@/contentcomponents/NoReading.mdx";
 import { default as ContentVisionsOfHCI } from "@/contentcomponents/VisionsOfHCI.mdx";
 import {
+  AssignmentCalendarItem,
   CalendarDate,
   CalendarItem,
   HolidayCalendarItem,
@@ -95,6 +96,7 @@ export const calendarData: {
   };
   holidays: HolidayCalendarItem[];
   lectures: LectureCalendarItem[];
+  assignments: { [key: string]: AssignmentCalendarItem };
 } = {
   datesOfInstruction: {
     start: verifyCalendarDate("2023-09-27", "Wed"),
@@ -328,7 +330,7 @@ export const calendarData: {
       title: "Research Topic: Designing with Children",
       guest: {
         name: "Jason Yip",
-        link: "http://bigyipper.com/",
+        link: "https://bigyipper.com/",
       },
     },
     // Week 9
@@ -369,4 +371,43 @@ export const calendarData: {
       title: "Project Milestone Presentations",
     },
   ],
+
+  assignments: {
+    projectProposal: {
+      type: "assignment",
+      title: "Project Proposal",
+      date: verifyCalendarDate("2023-10-13", "Fri"),
+      submission: "canvas",
+      submitCanvasTime: "11:59pm",
+      submitCanvasLink:
+        "https://canvas.uw.edu/courses/1665830/assignments/8670194",
+    },
+    projectMilestoneReport1: {
+      type: "assignment",
+      title: "Project Milestone Report 1",
+      date: verifyCalendarDate("2023-10-30", "Mon"),
+      submission: "canvas",
+      submitCanvasTime: "11:59pm",
+      submitCanvasLink:
+        "https://canvas.uw.edu/courses/1665830/assignments/8670192",
+    },
+    projectMilestoneReport2: {
+      type: "assignment",
+      title: "Project Milestone Report 2",
+      date: verifyCalendarDate("2023-11-27", "Mon"),
+      submission: "canvas",
+      submitCanvasTime: "11:59pm",
+      submitCanvasLink:
+        "https://canvas.uw.edu/courses/1665830/assignments/8670193",
+    },
+    projectFinalReport: {
+      type: "assignment",
+      title: "Project Final Report",
+      date: verifyCalendarDate("2023-12-12", "Tue"),
+      submission: "canvas",
+      submitCanvasTime: "11:59pm",
+      submitCanvasLink:
+        "https://canvas.uw.edu/courses/1665830/assignments/8670191",
+    },
+  },
 };

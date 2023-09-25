@@ -8,10 +8,12 @@ export type CalendarDate = string;
 /**
  * One or more dates associated with a calendar item.
  */
+export type BaseCalendarItemDate = {
+  date: CalendarDate;
+};
+
 export type BaseCalendarItemDates =
-  | {
-      date: CalendarDate;
-    }
+  | BaseCalendarItemDate
   | {
       dates: CalendarDate[];
     };
@@ -56,6 +58,20 @@ export type BaseCalendarItemTimeAndLocations =
  * Calendar item types.
  */
 
+export type AssignmentCalendarItemSubmission =
+  // | {}
+  | {
+      submission: "canvas";
+      submitCanvasTime: string;
+      submitCanvasLink: string;
+    };
+
+export type AssignmentCalendarItem = {
+  type: "assignment";
+  title: string;
+} & BaseCalendarItemDate &
+  AssignmentCalendarItemSubmission;
+
 export type HolidayCalendarItem = {
   type: "holiday";
   title: string;
@@ -73,7 +89,18 @@ export type LectureCalendarItem = {
   BaseCalendarItemTimeAndLocations &
   LectureCalendarItemContent;
 
-export type CalendarItem = HolidayCalendarItem | LectureCalendarItem;
+export type CalendarItem =
+  | AssignmentCalendarItem
+  | HolidayCalendarItem
+  | LectureCalendarItem;
+
+export function filterAssignmentCalendarItems(
+  calendarItems: CalendarItem[],
+): AssignmentCalendarItem[] {
+  return calendarItems.filter((calendarItemCurrent: CalendarItem): boolean => {
+    return calendarItemCurrent.type === "assignment";
+  }) as AssignmentCalendarItem[];
+}
 
 export function filterHolidayCalendarItems(
   calendarItems: CalendarItem[],
