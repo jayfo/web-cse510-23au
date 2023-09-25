@@ -64,5 +64,3 @@ export const FormattedReading: React.FunctionComponent<
     return resultComponent;
   }
 };
-
-export default FormattedReading;
