@@ -13,6 +13,20 @@ export default function Page(): React.ReactElement {
           anchor: "Project",
           href: "#project",
         },
+        [
+          {
+            anchor: "Proposal",
+            href: "#proposal",
+          },
+          {
+            anchor: "Milestone Reports",
+            href: "#milestone-reports",
+          },
+          {
+            anchor: "Final Report",
+            href: "#final-report",
+          },
+        ],
       ]}
     />
   );
