@@ -13,11 +13,15 @@ export const courseData = {
     anchor: "Guidance on Making Your Presentation Accessible",
   },
 
-  linkProjectMilestone1Signup: {
+  linkProjectFinalReportCHIFormat: {
+    href: "https://chi2023.acm.org/submission-guides/chi-publication-formats/",
+  },
+
+  linkProjectMilestoneReport1Signup: {
     href: undefined,
   },
 
-  linkProjectMilestone2Signup: {
+  linkProjectMilestoneReport2Signup: {
     href: undefined,
   },
 
