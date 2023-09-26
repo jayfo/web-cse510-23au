@@ -1,17 +1,20 @@
 import * as React from "react";
 
-import { ok as assert } from "assert"
+import { ok as assert } from "assert";
+
 import { AppLink } from "@/components/links/AppLink";
 import { TBD } from "@/components/TBD";
+import { AssignmentCalendarItem } from "@/types/CalendarData";
 import { assertIsOuterComponent, OuterComponent } from "@/types/OuterComponent";
-import {AssignmentCalendarItem} from "@/types/CalendarData";
 
 interface AssignmentSubmitCanvasLinkProps extends React.PropsWithChildren<{}> {
   assignmentKey: AssignmentCalendarItem;
   outerComponent?: OuterComponent;
 }
 
-export const AssignmentSubmitCanvasLink: React.FunctionComponent<AssignmentSubmitCanvasLinkProps> = ({
+export const AssignmentSubmitCanvasLink: React.FunctionComponent<
+  AssignmentSubmitCanvasLinkProps
+> = ({
   children,
   assignmentKey,
   // Default to no explicit outerComponent.
@@ -22,7 +25,7 @@ export const AssignmentSubmitCanvasLink: React.FunctionComponent<AssignmentSubmi
     assertIsOuterComponent(outerComponent);
   }
 
-  assert ("submission" in assignmentKey)
+  assert("submission" in assignmentKey);
   assert(assignmentKey.submission === "canvas");
 
   // // Actual href retrieved from CourseData.
