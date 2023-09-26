@@ -26,34 +26,32 @@ export const FormattedReading: React.FunctionComponent<
   const resultComponent: React.ReactElement = (() => {
     return (
       <React.Fragment>
-        <span>
-          {
-            // Optionally an author and then a space padding.
-            reading.authorText && (
-              <React.Fragment>{reading.authorText}. </React.Fragment>
-            )
-          }
-          {
-            // Always include a title, optionally with a link.
-            ((): React.ReactNode => {
-              if (reading.link) {
-                return (
-                  <React.Fragment>
-                    <AppLink href={reading.link}>{reading.title}</AppLink>.
-                  </React.Fragment>
-                );
-              } else {
-                return <React.Fragment>{reading.title}.</React.Fragment>;
-              }
-            })()
-          }
-          {
-            // Optionally space padding and then a publicationText.
-            reading.publicationText && (
-              <React.Fragment> {reading.publicationText}.</React.Fragment>
-            )
-          }
-        </span>
+        {
+          // Optionally an author and then a space padding.
+          reading.authorText && (
+            <React.Fragment>{reading.authorText}. </React.Fragment>
+          )
+        }
+        {
+          // Always include a title, optionally with a link.
+          ((): React.ReactNode => {
+            if (reading.link) {
+              return (
+                <React.Fragment>
+                  <AppLink href={reading.link}>{reading.title}</AppLink>.
+                </React.Fragment>
+              );
+            } else {
+              return <React.Fragment>{reading.title}.</React.Fragment>;
+            }
+          })()
+        }
+        {
+          // Optionally space padding and then a publicationText.
+          reading.publicationText && (
+            <React.Fragment> {reading.publicationText}.</React.Fragment>
+          )
+        }
       </React.Fragment>
     );
   })();
