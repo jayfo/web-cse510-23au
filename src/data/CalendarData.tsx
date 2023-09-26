@@ -276,20 +276,25 @@ export const calendarData: {
       date: verifyCalendarDate("2023-10-19", "Thu"),
       timeAndLocation: LECTURE_TIME_AND_LOCATION,
       type: "lecture",
-      title: "Research Topic: TBD",
+      title: "Research Topic: Design Tools",
     },
     // Week 5
     {
       date: verifyCalendarDate("2023-10-24", "Tue"),
       timeAndLocation: LECTURE_TIME_AND_LOCATION,
       type: "lecture",
-      title: "Research Topic: TBD",
+      title:
+        "Research Topic: Information and Communication Technologies and Development",
+      guest: {
+        name: "Kurtis Heimerl",
+        link: "https://kurti.sh/",
+      },
     },
     {
       date: verifyCalendarDate("2023-10-26", "Thu"),
       timeAndLocation: LECTURE_TIME_AND_LOCATION,
       type: "lecture",
-      title: "Research Topic: TBD",
+      title: "Experimental Design and Analysis",
     },
     // Week 7
     {
