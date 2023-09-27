@@ -1,5 +1,7 @@
 import * as React from "react";
 
+import { Reading } from "@/types/Reading";
+
 /**
  * Store calendar dates as YYYY-MM-DD strings (e.g., "2023-09-28").
  */
@@ -60,11 +62,11 @@ export type BaseCalendarItemTimeAndLocations =
 
 export type AssignmentCalendarItemSubmission =
   // | {}
-  | {
-      submission: "canvas";
-      submitCanvasTime: string;
-      submitCanvasLink: string;
-    };
+  {
+    submission: "canvas";
+    submitCanvasTime: string;
+    submitCanvasLink: string;
+  };
 
 export type AssignmentCalendarItem = {
   type: "assignment";
@@ -79,7 +81,13 @@ export type HolidayCalendarItem = {
 
 export type LectureCalendarItemContent =
   | {}
-  | { contentNonstandard: React.ReactNode };
+  | { contentNonstandard: React.ReactNode }
+  | {
+      readingsStandard: {
+        framing: Reading;
+        instances: Reading[];
+      };
+    };
 
 export type LectureCalendarItem = {
   type: "lecture";

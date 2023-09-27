@@ -14,6 +14,7 @@ import { ExpandCircleDownOutlined } from "@mui/icons-material";
 import { Box, Collapse, Grid, Paper, Typography } from "@mui/material";
 
 import { CALENDAR_DATE_FORMAT } from "./CourseCalendar";
+import {CalendarItemReadingsStandard} from "@/components/CourseCalendar/CalendarItemReadingsStandard";
 
 export const CalendarDateLecture: React.FunctionComponent<{
   calendarDate: CalendarDate;
@@ -123,6 +124,7 @@ export const CalendarDateLecture: React.FunctionComponent<{
               }}
             >
               <CalendarItemGuests calendarItem={lectureCalendarItem} />
+              <CalendarItemReadingsStandard calendarItem={lectureCalendarItem} />
               <CalendarItemContentNonstandard
                 calendarItem={lectureCalendarItem}
               />
