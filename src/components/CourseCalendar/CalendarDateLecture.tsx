@@ -1,5 +1,6 @@
 import * as React from "react";
 
+import { CalendarItemAdditionalResourceReadings } from "@/components/CourseCalendar/CalendarItemAdditionalResourceReadings";
 import { CalendarItemContentNonstandard } from "@/components/CourseCalendar/CalendarItemContentNonstandard";
 import { CalendarItemGuests } from "@/components/CourseCalendar/CalendarItemGuests";
 import { CalendarItemReadingsStandard } from "@/components/CourseCalendar/CalendarItemReadingsStandard";
@@ -128,6 +129,9 @@ export const CalendarDateLecture: React.FunctionComponent<{
                 calendarItem={lectureCalendarItem}
               />
               <CalendarItemContentNonstandard
+                calendarItem={lectureCalendarItem}
+              />
+              <CalendarItemAdditionalResourceReadings
                 calendarItem={lectureCalendarItem}
               />
             </Grid>

@@ -89,13 +89,18 @@ export type LectureCalendarItemContent =
       };
     };
 
+export type LectureCalendarItemAdditionalResourceReadings =
+  | {}
+  | { additionalResourceReadings: Reading[] };
+
 export type LectureCalendarItem = {
   type: "lecture";
   title: string;
 } & BaseCalendarItemDates &
   BaseCalendarItemGuests &
   BaseCalendarItemTimeAndLocations &
-  LectureCalendarItemContent;
+  LectureCalendarItemContent &
+  LectureCalendarItemAdditionalResourceReadings;
 
 export type CalendarItem =
   | AssignmentCalendarItem
