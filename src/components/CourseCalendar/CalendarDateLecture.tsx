@@ -2,6 +2,7 @@ import * as React from "react";
 
 import { CalendarItemContentNonstandard } from "@/components/CourseCalendar/CalendarItemContentNonstandard";
 import { CalendarItemGuests } from "@/components/CourseCalendar/CalendarItemGuests";
+import { CalendarItemReadingsStandard } from "@/components/CourseCalendar/CalendarItemReadingsStandard";
 import { CalendarItemTimeAndLocations } from "@/components/CourseCalendar/CalendarItemTimeAndLocations";
 import { formatCalendarDate } from "@/data/CalendarData";
 import {
@@ -14,7 +15,6 @@ import { ExpandCircleDownOutlined } from "@mui/icons-material";
 import { Box, Collapse, Grid, Paper, Typography } from "@mui/material";
 
 import { CALENDAR_DATE_FORMAT } from "./CourseCalendar";
-import {CalendarItemReadingsStandard} from "@/components/CourseCalendar/CalendarItemReadingsStandard";
 
 export const CalendarDateLecture: React.FunctionComponent<{
   calendarDate: CalendarDate;
@@ -124,7 +124,9 @@ export const CalendarDateLecture: React.FunctionComponent<{
               }}
             >
               <CalendarItemGuests calendarItem={lectureCalendarItem} />
-              <CalendarItemReadingsStandard calendarItem={lectureCalendarItem} />
+              <CalendarItemReadingsStandard
+                calendarItem={lectureCalendarItem}
+              />
               <CalendarItemContentNonstandard
                 calendarItem={lectureCalendarItem}
               />
