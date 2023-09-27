@@ -1,5 +1,6 @@
 import { ok as assert } from "assert";
 
+import { default as ContentContributionsInHCI } from "@/contentcomponents/ContributionsInHCI.mdx";
 import { default as ContentNoReading } from "@/contentcomponents/NoReading.mdx";
 import { default as ContentVisionsOfHCI } from "@/contentcomponents/VisionsOfHCI.mdx";
 import {
@@ -251,6 +252,206 @@ export const calendarData: {
       timeAndLocation: LECTURE_TIME_AND_LOCATION,
       type: "lecture",
       title: "Contributions in Human-Computer Interaction",
+      contentNonstandard: (
+        <ContentContributionsInHCI
+          readings={{
+            framing: {
+              authorText: "Jacob O. Wobbrock, Julie A. Kientz",
+              title: "Research Contributions in Human-Computer Interaction",
+              publicationText: "Interactions, 2016",
+              link: "https://canvas.uw.edu/files/109669373/",
+            },
+            contributions: {
+              Empirical: [
+                {
+                  authorText: "Rosanna Bellini",
+                  title:
+                    "Paying the Price: When Intimate Partners Use Technology for Financial Harm",
+                  publicationText: "CHI 2023",
+                  link: "https://doi.org/10.1145/3544548.3581101",
+                },
+                {
+                  authorText:
+                    "Ananya Bhattacharjee, Joseph Jay Williams, Jonah Meyerhoff, Harsh Kumar, Alex Mariakakis, Rachel Kornfield",
+                  title:
+                    "Investigating the Role of Context in the Delivery of Text Messages for Supporting Psychological Wellbeing",
+                  publicationText: "CHI 2023",
+                  link: "https://doi.org/10.1145/3544548.3580774",
+                },
+                {
+                  authorText:
+                    "Ishita Chordia, Lena-Phuong Tran, Tala June Tayebi, Emily Parrish, Sheena Erete, Jason Yip, Alexis Hiniker",
+                  title:
+                    "Deceptive Design Patterns in Safety Technologies: A Case Study of the Citizen App",
+                  publicationText: "CHI 2023",
+                  link: "https://doi.org/10.1145/3544548.3581258",
+                },
+                {
+                  authorText:
+                    "Eunkyung Jo, Daniel A. Epstein, Hyunhoon Jung, Young-Ho Kim",
+                  title:
+                    "Understanding the Benefits and Challenges of Deploying Conversational AI Leveraging Large Language Models for Public Health Intervention",
+                  publicationText: "CHI 2023",
+                  link: "https://doi.org/10.1145/3544548.3581503",
+                },
+              ],
+              Artifact: [
+                {
+                  authorText:
+                    "Joseph Chee Chang, Amy X. Zhang, Jonathan Bragg, Andrew Head, Kyle Lo, Doug Downey, Daniel S. Weld",
+                  title:
+                    "CiteSee: Augmenting Citations in Scientific Papers with Persistent and Personalized Historical Context",
+                  publicationText: "CHI 2023",
+                  link: "https://doi.org/10.1145/3544548.3580847",
+                },
+                {
+                  authorText:
+                    "Damien Masson, Sylvain Malacria, Daniel Vogel, Edward Lank, Géry Casiez",
+                  title:
+                    "ChartDetective: Easy and Accurate Interactive Data Extraction from Complex Vector Charts",
+                  publicationText: "CHI 2023",
+                  link: "https://doi.org/10.1145/3544548.3581113",
+                },
+                {
+                  authorText:
+                    "Steven Moore, Q. Vera Liao, Hariharan Subramonyam",
+                  title:
+                    "FAIlureNotes: Supporting Designers in Understanding the Limits of AI Models for Computer Vision Tasks",
+                  publicationText: "CHI 2023",
+                  link: "https://doi.org/10.1145/3544548.3581242",
+                },
+              ],
+              Methodological: [
+                {
+                  authorText:
+                    "Paul T. Chiou, Ali S. Alotaibi, William G.J. Halfond",
+                  title:
+                    "BAGEL: An Approach to Automatically Detect Navigation-Based Web Accessibility Barriers for Keyboard Users",
+                  publicationText: "CHI 2023",
+                  link: "https://doi.org/10.1145/3544548.3580749",
+                },
+                {
+                  authorText:
+                    "Laura J Perovich, Bernice Rogowitz, Victoria Crabb, Jack Vogelsang, Sara Hartleben, Dietmar Offenhuber",
+                  title:
+                    "The Tactile Dimension: A Method for Physicalizing Touch Behaviors",
+                  publicationText: "CHI 2023",
+                  link: "https://doi.org/10.1145/3544548.3581137",
+                },
+                {
+                  authorText:
+                    "Lara Reime, Vasiliki Tsaknaki, Marisa Leavitt Cohn",
+                  title:
+                    "Walking Through Normativities of Reproductive Bodies: A Method for Critical Analysis of Tracking Applications",
+                  publicationText: "CHI 2023",
+                  link: "https://doi.org/10.1145/3544548.3581450",
+                },
+              ],
+              Theoretical: [
+                {
+                  authorText:
+                    "Rachael Garrett, Kristina Popova, Claudia Núñez-Pacheco, Thorhildur Asgeirsdottir, Airi Lampinen, Kristina Höök",
+                  title:
+                    "Felt Ethics: Cultivating Ethical Sensibility in Design Practice",
+                  publicationText: "CHI 2023",
+                  link: "https://doi.org/10.1145/3544548.3580875",
+                },
+                {
+                  authorText:
+                    "Beat Rossmy, Nađa Terzimehić, Tanja Döring, Daniel Buschek, Alexander Wiethoff",
+                  title:
+                    "Point of no Undo: Irreversible Interactions as a Design Strategy",
+                  publicationText: "CHI 2023",
+                  link: "https://doi.org/10.1145/3544548.3581433",
+                },
+                {
+                  authorText:
+                    "Carol F Scott, Gabriela Marcu, Riana Elyse Anderson, Mark W Newman, Sarita Schoenebeck",
+                  title:
+                    "Trauma-Informed Social Media: Towards Solutions for Reducing and Healing Online Harm",
+                  publicationText: "CHI 2023",
+                  link: "https://doi.org/10.1145/3544548.3581512",
+                },
+              ],
+              "Benchmark / Dataset": [
+                {
+                  authorText:
+                    "Amanda Baughan, Xuezhi Wang, Ariel Liu, Allison Mercurio, Jilin Chen, Xiao Ma",
+                  title:
+                    "A Mixed-Methods Approach to Understanding User Trust after Voice Assistant Failures",
+                  publicationText: "CHI 2023",
+                  link: "https://doi.org/10.1145/3544548.3581152",
+                },
+                {
+                  authorText:
+                    "Saelyne Yang, Sangkyung Kwak, Juhoon Lee, Juho Kim",
+                  title:
+                    "Beyond Instructions: A Taxonomy of Information Types in How-to Videos",
+                  publicationText: "CHI 2023",
+                  link: "https://doi.org/10.1145/3544548.3581126",
+                },
+                {
+                  authorText: "Zehua Zeng, Leilani Battle",
+                  title:
+                    "A Review and Collation of Graphical Perception Knowledge for Visualization Recommendation",
+                  publicationText: "CHI 2023",
+                  link: "https://doi.org/10.1145/3544548.3581349",
+                },
+              ],
+              Survey: [
+                {
+                  authorText:
+                    "Alyxander Burns, Christiana Lee, Ria Chawla, Evan Peck, Narges Mahyar",
+                  title:
+                    "Who Do We Mean When We Talk About Visualization Novices?",
+                  publicationText: "CHI 2023",
+                  link: "https://doi.org/10.1145/3544548.3581524",
+                },
+                {
+                  authorText:
+                    "Yiqun T. Chen, Angela D. R. Smith, Katharina Reinecke, Alexandra To",
+                  title:
+                    "Why, When, and From Whom: Considerations for Collecting and Reporting Race and Ethnicity Data in HCI",
+                  publicationText: "CHI 2023",
+                  link: "https://doi.org/10.1145/3544548.3581122",
+                },
+                {
+                  authorText:
+                    "Yixuan Zhang, Joseph D Gaggiano, Nutchanon Yongsatianchot, Nurul M Suhaimi, Miso Kim, Yifan Sun, Jacqueline Griffin, Andrea G Parker",
+                  title:
+                    "What Do We Mean When We Talk about Trust in Social Media? A Systematic Review",
+                  publicationText: "CHI 2023",
+                  link: "https://doi.org/10.1145/3544548.3581019",
+                },
+              ],
+              Opinion: [
+                {
+                  authorText: "Ron Wakkary, Doenja Oogjes, Armi Behzad",
+                  title:
+                    "Two Years or More of Co-speculation: Polylogues of Philosophers, Designers, and a Tilting Bowl",
+                  publicationText: "TOCHI, 2022",
+                  link: "https://doi.org/10.1145/3514235",
+                },
+              ],
+            },
+          }}
+        />
+      ),
+      additionalResourceReadings: [
+        {
+          authorText: "Herbert A. Simon",
+          title: "The Science of Design: Creating the Artificial",
+          publicationText: "Design Issues, 1988",
+          link: "https://canvas.uw.edu/files/109669331/",
+        },
+        {
+          authorText: "Donald E. Stokes",
+          title:
+            "Pasteur’s Quadrant: Basic Science and Technological Innovation",
+          publicationText: "Book Chapter, 1997",
+          link: "https://canvas.uw.edu/files/109669330/",
+        },
+      ],
     },
     // Week 3
     {
@@ -311,6 +512,33 @@ export const calendarData: {
       timeAndLocation: LECTURE_TIME_AND_LOCATION,
       type: "lecture",
       title: "Research Topic: Design Tools",
+      readingsStandard: {
+        framing: {
+          authorText:
+            "Mark W. Newman, James Lin, Jason I. Hong, James A. Landay",
+          title:
+            "DENIM: An Informal Web Site Design Tool Inspired by Observations of Practice",
+          publicationText: "HCI, 2003",
+          link: "https://canvas.uw.edu/files/109846152/",
+        },
+        instances: [
+          {
+            authorText:
+              "Steven P. Dow, Alana Glassco, Jonathan Kass, Melissa Schwarz, Daniel L. Schwartz, Scott R. Klemmer",
+            title:
+              "Parallel Prototyping Leads to Better Design Results, More Divergence, and Increased Self-Efficacy",
+            publicationText: "TOCHI, 2010",
+            link: "https://canvas.uw.edu/files/109846134/",
+          },
+          {
+            authorText:
+              "Stefanie Mueller, Sangha Im, Serafima Gurevich, Alexander Teibrich, Lisa Pfisterer, François Guimbretière, Patrick Baudisch",
+            title: "WirePrint: 3D Printed Previews for Fast Prototyping",
+            publicationText: "UIST 2014",
+            link: "https://canvas.uw.edu/files/109846146/",
+          },
+        ],
+      },
     },
     // Week 5
     {
