@@ -8,5 +8,9 @@
 
 RewriteEngine On
 
+RewriteRule ^assignments[/]?$ assignments.html
+RewriteRule ^assignments/exam[/]?$ assignments/exam.html
+RewriteRule ^assignments/project[/]?$ assignments/project.html
 RewriteRule ^assignments/readings[/]?$ assignments/readings.html
+RewriteRule ^assignments/statisticslab[/]?$ assignments/statisticslab.html
 RewriteRule ^calendar[/]?$ calendar.html
