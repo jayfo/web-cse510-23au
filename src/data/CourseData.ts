@@ -26,16 +26,16 @@ export const courseData = {
   },
 
   linkProjectProposalGoogleDoc: {
-    href: "https://docs.google.com/document/d/1mmYPRx8LmdH6f9p0zq1CjZznMe8nJp72DDqR9cd6QMM/edit?usp=sharing",
+    href: "https://docs.google.com/document/d/1mmYPRx8LmdH6f9p0zq1CjZznMe8nJp72DDqR9cd6QMM",
   },
 
   linkVisionsSignup: {
-    href: "https://docs.google.com/document/d/1vtwIw_jZurCsgwtlNloEoedjRblA5q2v7avqo_AYvXQ/edit#heading=h.sm4v937g4cdo",
+    href: "https://docs.google.com/document/d/1vtwIw_jZurCsgwtlNloEoedjRblA5q2v7avqo_AYvXQ",
     anchor: "Visions of HCI Presentation Signup",
   },
 
   linkVisionsSlides: {
-    href: "https://docs.google.com/presentation/d/10wRbnA7hIAYDbrybF6yMA6WRaFzoFtYQBxSBYa1Y-5Y/edit?usp=drive_link",
+    href: "https://docs.google.com/presentation/d/10wRbnA7hIAYDbrybF6yMA6WRaFzoFtYQBxSBYa1Y-5Y",
     anchor: "Visions of HCI Presentation Slides",
   },
 
@@ -47,5 +47,3 @@ export const courseData = {
     link: "https://faculty.washington.edu/wobbrock/pubs/Wobbrock-2015.pdf",
   },
 } as const;
-
-// export type CourseDataLinkKey = keyof typeof courseData;
