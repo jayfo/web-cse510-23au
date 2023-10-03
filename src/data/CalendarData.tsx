@@ -649,7 +649,17 @@ export const calendarData: {
       date: verifyCalendarDate("2023-12-07", "Thu"),
       timeAndLocation: LECTURE_TIME_AND_LOCATION,
       type: "lecture",
-      title: "Research Topic: TBD",
+      title: "Research Topic: Sustained HCI Research In-the-Wild",
+      guests: [
+        {
+          name: "Katharina Reinecke",
+          link: "https://homes.cs.washington.edu/~reinecke/",
+        },
+        {
+          name: "Richard Li",
+          link: "https://lichard49.github.io/",
+        },
+      ],
     },
 
     // Project Milestone Presentations, Week 6 and Week 10

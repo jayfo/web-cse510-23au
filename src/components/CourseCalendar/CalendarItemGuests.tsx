@@ -21,7 +21,7 @@ export const CalendarItemGuests: React.FunctionComponent<{
     calendarItemGuests &&
     calendarItemGuests.map((guestCurrent, indexCurrent): React.ReactElement => {
       return (
-        <Alert key={indexCurrent} severity="info">
+        <Alert key={indexCurrent} severity="info" sx={{marginTop: 1}}>
           Guest:{" "}
           {((): React.ReactNode => {
             if (guestCurrent.link) {
