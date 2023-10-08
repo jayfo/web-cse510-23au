@@ -37,6 +37,10 @@ export const courseData = {
     href: "https://canvas.uw.edu/courses/1665830/files/folder/project%20samples",
   },
 
+  linkStatisticsLab: {
+    href: "",
+  },
+
   linkVisionsSignup: {
     href: "https://docs.google.com/document/d/1vtwIw_jZurCsgwtlNloEoedjRblA5q2v7avqo_AYvXQ",
     anchor: "Visions of HCI Presentation Signup",

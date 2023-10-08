@@ -713,5 +713,19 @@ export const calendarData: {
       submitCanvasLink:
         "https://canvas.uw.edu/courses/1665830/assignments/8670191",
     },
+
+    statisticsLabAvailable: {
+      type: "assignment",
+      title: "Statistics Lab Available",
+      date: verifyCalendarDate("2023-10-26", "Thu"),
+    },
+    statisticsLab: {
+      type: "assignment",
+      title: "Statistics Lab",
+      date: verifyCalendarDate("2023-11-19", "Sun"),
+      submission: "canvas",
+      submitCanvasTime: "11:59pm",
+      submitCanvasLink: undefined,
+    },
   },
 };
