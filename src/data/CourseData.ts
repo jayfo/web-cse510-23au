@@ -29,6 +29,14 @@ export const courseData = {
     href: "https://docs.google.com/document/d/1mmYPRx8LmdH6f9p0zq1CjZznMe8nJp72DDqR9cd6QMM",
   },
 
+  linkProjectProposalIdeas: {
+    href: "https://canvas.uw.edu/courses/1665830/discussion_topics/8379070",
+  },
+
+  linkProjectProposalSamples: {
+    href: "https://canvas.uw.edu/courses/1665830/files/folder/project%20samples",
+  },
+
   linkVisionsSignup: {
     href: "https://docs.google.com/document/d/1vtwIw_jZurCsgwtlNloEoedjRblA5q2v7avqo_AYvXQ",
     anchor: "Visions of HCI Presentation Signup",
