@@ -1,15 +1,11 @@
-import { AssignmentDueDate } from "@/components/AssignmentDueDate";
+import { AssignmentDueDateTime } from "@/components/AssignmentDueDateTime";
 import { FormattedReading } from "@/components/FormattedReading";
-import { TBD } from "@/components/TBD";
-import { UnderDevelopment } from "@/components/UnderDevelopment";
-import {AssignmentSubmitCanvasLink} from "@/components/links/AssignmentSubmitCanvasLink";
-import {courseData} from "@/data/CourseData";
-import {calendarData} from "@/data/CalendarData";
-import {CourseDataLink} from "@/components/links/CourseDataLink";
+import { AssignmentSubmitCanvasLink } from "@/components/links/AssignmentSubmitCanvasLink";
+import { CourseDataLink } from "@/components/links/CourseDataLink";
+import { calendarData } from "@/data/CalendarData";
+import { courseData } from "@/data/CourseData";
 
 # Project
-
-<UnderDevelopment display={true} />
 
 A course project will be a major component of your work.
 This will require hands-on experience with HCI, while remaining open to different possibilities.
@@ -40,13 +36,13 @@ Some sample project ideas, gathered from faculty and researchers, will be made a
 
 Project deliverables are defined in terms of a proposal, a pair of self-defined milestone reports, and a final report.
 
-Proposal Due: <AssignmentDueDate assignmentKey={calendarData.assignments.projectProposal} />.
+Proposal Due: <AssignmentDueDateTime assignmentKey={calendarData.assignments.projectProposal} />.
 
-Milestone Report 1 Due: <AssignmentDueDate assignmentKey={calendarData.assignments.projectMilestoneReport1} />.
+Milestone Report 1 Due: <AssignmentDueDateTime assignmentKey={calendarData.assignments.projectMilestoneReport1} />.
 
-Milestone Report 2 Due: <AssignmentDueDate assignmentKey={calendarData.assignments.projectMilestoneReport2} />.
+Milestone Report 2 Due: <AssignmentDueDateTime assignmentKey={calendarData.assignments.projectMilestoneReport2} />.
 
-Final Report Due: <AssignmentDueDate assignmentKey={calendarData.assignments.projectFinalReport} />.
+Final Report Due: <AssignmentDueDateTime assignmentKey={calendarData.assignments.projectFinalReport} />.
 
 ## Proposal
 
@@ -121,7 +117,7 @@ We expect proposals will be nearly complete at this time, so as to receive maxim
 
 ### Proposal Submission
 
-Due: <AssignmentDueDate assignmentKey={calendarData.assignments.projectProposal} />.
+Due: <AssignmentDueDateTime assignmentKey={calendarData.assignments.projectProposal} />.
 
 Submit your final proposal document in PDF format.
 
@@ -160,9 +156,9 @@ Be sure to consider
 
 ### Milestone Submission
 
-Milestone Report 1 Due: <AssignmentDueDate assignmentKey={calendarData.assignments.projectMilestoneReport1} />.
+Milestone Report 1 Due: <AssignmentDueDateTime assignmentKey={calendarData.assignments.projectMilestoneReport1} />.
 
-Milestone Report 2 Due: <AssignmentDueDate assignmentKey={calendarData.assignments.projectMilestoneReport2} />.
+Milestone Report 2 Due: <AssignmentDueDateTime assignmentKey={calendarData.assignments.projectMilestoneReport2} />.
 
 Submit your milestone document and milestone presentation in PDF format.
 Sign up for a presentation slot.
@@ -208,7 +204,7 @@ Additional guidance regarding effective paper writing can be found in:
 
 ### Final Report Submission
 
-Due: <AssignmentDueDate assignmentKey={calendarData.assignments.projectFinalReport} />.
+Due: <AssignmentDueDateTime assignmentKey={calendarData.assignments.projectFinalReport} />.
 
 Submit your final report document in PDF format:
 
