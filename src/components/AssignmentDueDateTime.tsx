@@ -1,5 +1,7 @@
 import * as React from "react";
 
+import { ok as assert } from "assert";
+
 import { formatCalendarDate } from "@/data/CalendarData";
 import { AssignmentCalendarItem } from "@/types/CalendarData";
 import { OuterComponent } from "@/types/OuterComponent";
@@ -22,6 +24,9 @@ export const AssignmentDueDateTime: React.FunctionComponent<
   // Default to no explicit outerComponent.
   outerComponent = undefined,
 }) => {
+  assert("submission" in assignmentKey);
+  assert(assignmentKey.submission === "canvas");
+
   const resultComponent: React.ReactElement = (() => {
     return (
       <React.Fragment>
