@@ -616,6 +616,31 @@ export const calendarData: {
         name: "Mitchell Gordon",
         link: "https://mgordon.me/",
       },
+      readingsStandard: {
+        framing: {
+          authorText: "Eric Horvitz",
+          title: "Principles of Mixed-Initiative User Interfaces",
+          publicationText: "CHI 1999",
+          link: "https://canvas.uw.edu/files/110367098/",
+        },
+        instances: [
+          {
+            authorText:
+              "Mitchell L. Gordon, Michelle S. Lam, Joon Sung Park, Kayur Patel, Jeff Hancock, Tatsunori Hashimoto, Michael S. Bernstein",
+            title:
+              "Jury Learning: Integrating Dissenting Voices into Machine Learning Models",
+            publicationText: "CHI 2022",
+            link: "https://canvas.uw.edu/files/109846184/",
+          },
+          {
+            authorText:
+              "Joon Sung Park, Joseph C. O'Brien, Carrie J. Cai, Meredith Ringel Morris, Percy Liang, Michael S. Bernstein",
+            title: "Generative Agents: Interactive Simulacra of Human Behavior",
+            publicationText: "UIST 2023",
+            link: "https://canvas.uw.edu/files/110367205/",
+          },
+        ],
+      },
     },
     {
       date: verifyCalendarDate("2023-11-16", "Thu"),
