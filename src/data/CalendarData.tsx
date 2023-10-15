@@ -820,7 +820,7 @@ export const calendarData: {
     projectProposal: {
       type: "assignment",
       title: "Project Proposal",
-      date: verifyCalendarDate("2023-10-13", "Fri"),
+      date: verifyCalendarDate("2023-10-15", "Sun"),
       submission: "canvas",
       submitCanvasTime: "11:59pm",
       submitCanvasLink:
