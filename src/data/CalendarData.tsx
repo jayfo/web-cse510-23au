@@ -631,6 +631,32 @@ export const calendarData: {
         name: "Ben Shapiro",
         link: "https://benshapi.ro/",
       },
+      readingsStandard: {
+        framing: {
+          authorText: "William J. Pluta, Clark A. Chinn, Ravit Golan Duncan",
+          title: "Learners' Epistemic Criteria for Good Scientific Models",
+          publicationText: "Journal of Research in Science Teaching, 2011",
+          link: "https://canvas.uw.edu/files/110704967/",
+        },
+        instances: [
+          {
+            authorText:
+              "Andrea A. diSessa, David Hammer, Bruce Sherin, Tina Kolpakowski",
+            title:
+              "Inventing Graphing: Meta-Representational Expertise in Children",
+            publicationText: "The Journal of Mathematical Behavior, 1991",
+            link: "https://canvas.uw.edu/files/109846090/",
+          },
+          {
+            authorText:
+              "Thomas M. Philip, Maria C. Olivares-Pasillas, Janet Rocha",
+            title:
+              "Becoming Racially Literate About Data and Data-Literate About Race: Data Visualizations in the Classroom as a Site of Racial-Ideological Micro-Contestations",
+            publicationText: "Cognition and Instruction, 2016",
+            link: "https://canvas.uw.edu/files/110704966/",
+          },
+        ],
+      },
     },
     // Week 8
     {
