@@ -867,5 +867,19 @@ export const calendarData: {
       submitCanvasTime: "11:59pm",
       submitCanvasLink: undefined,
     },
+
+    examAvailable: {
+      type: "assignment",
+      title: "Exam Available",
+      date: verifyCalendarDate("2023-12-07", "Thu"),
+    },
+    exam: {
+      type: "assignment",
+      title: "Exam",
+      date: verifyCalendarDate("2023-12-11", "Mon"),
+      submission: "canvas",
+      submitCanvasTime: "11:59pm",
+      submitCanvasLink: undefined,
+    },
   },
 };
