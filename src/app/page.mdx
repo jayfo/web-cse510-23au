@@ -1,10 +1,9 @@
 import Box from "@mui/material/Box";
 import Image from "next-image-export-optimizer";
 
-import { TBD } from "@/components/TBD";
-import { UnderDevelopment } from "@/components/UnderDevelopment";
 import { CourseStoreLink } from "@/components/links/CourseStoreLink";
 import { SiteLink } from "@/components/links/SiteLink";
+import { default as AssignmentsOverview } from "@/contentcomponents/AssignmentsOverview.mdx";
 import { SiteLinks} from "@/data/SiteLinks";
 import { Paths } from "@/paths";
 
@@ -12,8 +11,6 @@ import imgPhotoJames from "public/images/photo_james.jpg";
 import imgPhotoShaan from "public/images/photo_shaan.jpg";
 
 # Course Overview
-
-<UnderDevelopment display={true} />
 
 ## Course Description
 
@@ -92,9 +89,7 @@ Canvas will be used when appropriate for limiting access to course information a
 
 ## Assignments
 
-<TBD outerComponent="div">
-    &lt;AssignmentsOverview /&gt;
-</TBD>
+<AssignmentsOverview />
 
 ## Grading
 
