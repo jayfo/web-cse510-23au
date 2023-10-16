@@ -5,7 +5,7 @@ import { CalendarItemContentNonstandard } from "@/components/CourseCalendar/Cale
 import { CalendarItemGuests } from "@/components/CourseCalendar/CalendarItemGuests";
 import { CalendarItemReadingsStandard } from "@/components/CourseCalendar/CalendarItemReadingsStandard";
 import { CalendarItemTimeAndLocations } from "@/components/CourseCalendar/CalendarItemTimeAndLocations";
-import { formatCalendarDate } from "@/data/CalendarData";
+import { formatCalendarDate, parseCalendarDate } from "@/data/CalendarData";
 import {
   CalendarDate,
   CalendarItem,
@@ -14,6 +14,7 @@ import {
 import { idAnchorText } from "@/utils/idAnchorText";
 import { ExpandCircleDownOutlined } from "@mui/icons-material";
 import { Box, Collapse, Grid, Paper, Typography } from "@mui/material";
+import { differenceInCalendarDays } from "date-fns";
 
 import { CALENDAR_DATE_FORMAT } from "./CourseCalendar";
 
@@ -23,8 +24,12 @@ export const CalendarDateLecture: React.FunctionComponent<{
   calendarItems: CalendarItem[];
 }> = ({ calendarDate, lectureCalendarItem, calendarItems }) => {
   const [expanded, setExpanded] = React.useState<boolean>(
-    true,
-    // calendarDateCurrent.date.diffNow("days").days >= -1
+    ((): boolean => {
+      const dateCalendar = parseCalendarDate(calendarDate);
+      const dateNow = Date.now();
+
+      return differenceInCalendarDays(dateCalendar, dateNow) >= 0;
+    })(),
   );
 
   const toggleExpanded = () => {
