@@ -18,11 +18,11 @@ export const courseData = {
   },
 
   linkProjectMilestoneReport1Signup: {
-    href: undefined,
+    href: "https://docs.google.com/document/d/1XDDzfgNuEnGLK76ulvZ7Nhyupnx8KjLhNXFRXPotkSk/",
   },
 
   linkProjectMilestoneReport2Signup: {
-    href: undefined,
+    href: "https://docs.google.com/document/d/1F6w_zzCboMpV5QPcFM4Ww6lmyBh2SBxqb2_t13rKaFI/",
   },
 
   linkProjectProposalGoogleDoc: {
@@ -38,7 +38,7 @@ export const courseData = {
   },
 
   linkStatisticsLab: {
-    href: "",
+    href: "https://canvas.uw.edu/files/111265338/",
   },
 
   linkVisionsSignup: {
