@@ -866,6 +866,30 @@ export const calendarData: {
           link: "https://lichard49.github.io/",
         },
       ],
+      readingsStandard: {
+        framing: {
+          authorText: "Philip Guo",
+          title:
+            "Ten Million Users and Ten Years Later: Python Tutor’s Design Guidelines for Building Scalable and Sustainable Research Software in Academia",
+          publicationText: "UIST 2021",
+          link: "https://canvas.uw.edu/files/112522481/",
+        },
+        instances: [
+          {
+            authorText: "Katharina Reinecke and Krzysztof Z. Gajos",
+            title:
+              "LabintheWild: Conducting Large-Scale Online Experiments With Uncompensated Samples",
+            publicationText: "CSCW 2015",
+            link: "https://canvas.uw.edu/files/112522487/",
+          },
+          {
+            authorText: "Richard Li et al.",
+            title: "Title Anonymized",
+            publicationText: "In Preparation",
+            link: "https://canvas.uw.edu/files/112522484/",
+          },
+        ],
+      },
     },
 
     // Project Milestone Presentations, Week 6 and Week 10
