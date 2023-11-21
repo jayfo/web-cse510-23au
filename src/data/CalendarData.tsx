@@ -1,5 +1,9 @@
+import * as React from "react";
+
 import { ok as assert } from "assert";
 
+import { FormattedReading } from "@/components/FormattedReading";
+import { CourseStoreLink } from "@/components/links/CourseStoreLink";
 import { default as ContentContributionsInHCI } from "@/contentcomponents/ContributionsInHCI.mdx";
 import { default as ContentNoReading } from "@/contentcomponents/NoReading.mdx";
 import { default as ContentVisionsOfHCI } from "@/contentcomponents/VisionsOfHCI.mdx";
@@ -783,7 +787,69 @@ export const calendarData: {
       date: verifyCalendarDate("2023-12-05", "Tue"),
       timeAndLocation: LECTURE_TIME_AND_LOCATION,
       type: "lecture",
-      title: "Research Topic: TBD",
+      title: "Research Topic: Personal Health Informatics",
+      guest: {
+        name: "Sean Munson",
+        link: "https://www.smunson.com/",
+      },
+      contentNonstandard: (
+        <React.Fragment>
+          <p>Read both framing papers:</p>
+          <ul>
+            <li>
+              <p>
+                <FormattedReading
+                  reading={{
+                    authorText: "Ian Li, Anind Dey, Jodi Forlizzi",
+                    title:
+                      "A Stage-Based Model of Personal Informatics Systems",
+                    publicationText: "CHI 2010",
+                    link: "https://canvas.uw.edu/files/112522023",
+                  }}
+                />
+              </p>
+            </li>
+            <li>
+              <p>
+                <FormattedReading
+                  reading={{
+                    authorText: "Charlotte P. Lee",
+                    title:
+                      "Boundary Negotiating Artifacts: Unbinding the Routine of Boundary Objects and Embracing Chaos in Collaborative Work",
+                    publicationText: "CSCW 2007",
+                    link: "https://canvas.uw.edu/files/112522025/",
+                  }}
+                />
+              </p>
+            </li>
+          </ul>
+          <p>Optional instance reading:</p>
+          <ul>
+            <li>
+              <p>
+                <FormattedReading
+                  reading={{
+                    authorText:
+                      "Chia-Fang Chung, Qiaosi Wang, Jessica Schroeder, Allison Cole, Jasmine Zia, James Fogarty, Sean A. Munson",
+                    title:
+                      "Identifying and Planning for Individualized Change: Patient-Provider Collaboration Using Lightweight Food Diaries in Healthy Eating and Irritable Bowel Syndrome",
+                    publicationText: "UbiComp 2019",
+                    link: "https://canvas.uw.edu/files/112522022",
+                  }}
+                />
+              </p>
+            </li>
+          </ul>
+          <p>
+            Post a reading report in the appropriate thread(s), by 11:59pm the
+            night before class:
+          </p>
+          <CourseStoreLink
+            outerComponent="p"
+            linkKey={"linkCanvasDiscussion"}
+          />
+        </React.Fragment>
+      ),
     },
     {
       date: verifyCalendarDate("2023-12-07", "Thu"),
