@@ -61,16 +61,17 @@ export type BaseCalendarItemTimeAndLocations =
  */
 
 export type AssignmentCalendarItemSubmission =
-  // | {}
-  {
-    submission: "canvas";
-    submitCanvasTime: string;
-    submitCanvasLink: string;
-  };
+  | {}
+  | {
+      submission: "canvas";
+      submitCanvasTime: string;
+      submitCanvasLink: string;
+    };
 
 export type AssignmentCalendarItem = {
   type: "assignment";
   title: string;
+  link?: string;
 } & BaseCalendarItemDate &
   AssignmentCalendarItemSubmission;
 

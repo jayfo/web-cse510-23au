@@ -1,10 +1,9 @@
 import Box from "@mui/material/Box";
 import Image from "next-image-export-optimizer";
 
-import { TBD } from "@/components/TBD";
-import { UnderDevelopment } from "@/components/UnderDevelopment";
 import { CourseStoreLink } from "@/components/links/CourseStoreLink";
 import { SiteLink } from "@/components/links/SiteLink";
+import { default as AssignmentsOverview } from "@/contentcomponents/AssignmentsOverview.mdx";
 import { SiteLinks} from "@/data/SiteLinks";
 import { Paths } from "@/paths";
 
@@ -12,8 +11,6 @@ import imgPhotoJames from "public/images/photo_james.jpg";
 import imgPhotoShaan from "public/images/photo_shaan.jpg";
 
 # Course Overview
-
-<UnderDevelopment display={true} />
 
 ## Course Description
 
@@ -92,9 +89,7 @@ Canvas will be used when appropriate for limiting access to course information a
 
 ## Assignments
 
-<TBD outerComponent="div">
-    &lt;AssignmentsOverview /&gt;
-</TBD>
+<AssignmentsOverview />
 
 ## Grading
 
@@ -107,9 +102,6 @@ The overall course grade will be computed as follows:
 - 20%: Reading Reports and In-Class Small Group Discussion
 
   Reading reports will be graded 0 to 2 points as described in [Reading Reports](/assignments/readings#reading-reports).
-
-  Based on the [In-Class Discussion Format](/assignments/readings#in-class-discussion-format),
-  an additional .5 points will be associated with each small group discussion and its resulting question to the presenter and the class.
 
 - 45%: Project
 

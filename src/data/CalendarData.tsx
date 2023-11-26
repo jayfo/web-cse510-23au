@@ -1,8 +1,13 @@
+import * as React from "react";
+
 import { ok as assert } from "assert";
 
+import { FormattedReading } from "@/components/FormattedReading";
+import { CourseStoreLink } from "@/components/links/CourseStoreLink";
 import { default as ContentContributionsInHCI } from "@/contentcomponents/ContributionsInHCI.mdx";
 import { default as ContentNoReading } from "@/contentcomponents/NoReading.mdx";
 import { default as ContentVisionsOfHCI } from "@/contentcomponents/VisionsOfHCI.mdx";
+import { SiteLinks } from "@/data/SiteLinks";
 import {
   AssignmentCalendarItem,
   CalendarDate,
@@ -57,7 +62,11 @@ export function calendarDates(): string[] {
 }
 
 export function calendarItems(): CalendarItem[] {
-  return [...calendarData.holidays, ...calendarData.lectures];
+  return [
+    ...Object.values(calendarData.assignments),
+    ...calendarData.holidays,
+    ...calendarData.lectures,
+  ];
 }
 
 export function calendarItemsForDate(
@@ -101,7 +110,7 @@ export const calendarData: {
 } = {
   datesOfInstruction: {
     start: verifyCalendarDate("2023-09-27", "Wed"),
-    end: verifyCalendarDate("2023-12-08", "Fri"),
+    end: verifyCalendarDate("2023-12-15", "Fri"),
   },
 
   holidays: [
@@ -595,6 +604,32 @@ export const calendarData: {
         name: "Martez Mott",
         link: "http://www.martezmott.com/",
       },
+      readingsStandard: {
+        framing: {
+          authorText:
+            "Jacob O. Wobbrock, Krzysztof Z. Gajos, Shaun K. Kane, Gregg C. Vanderheiden",
+          title: "Ability-Based Design",
+          publicationText: "CACM, 2018",
+          link: "https://canvas.uw.edu/files/109669327/",
+        },
+        instances: [
+          {
+            authorText:
+              "Martez E. Mott, Radu-Daniel Vatavu, Shaun K. Kane, Jacob O. Wobbrock",
+            title:
+              "Smart Touch: Improving Touch Accuracy for People with Motor Impairments with Template Matching",
+            publicationText: "CHI 2016",
+            link: "https://canvas.uw.edu/files/109669328/",
+          },
+          {
+            authorText: "Rachel L. Franz, Sasa Junuzovic, Martez Mott",
+            title:
+              "Nearmi: A Framework for Designing Point of Interest Techniques for VR Users with Limited Mobility",
+            publicationText: "ASSETS 2021",
+            link: "https://canvas.uw.edu/files/109669329/",
+          },
+        ],
+      },
     },
     {
       date: verifyCalendarDate("2023-11-09", "Thu"),
@@ -604,6 +639,32 @@ export const calendarData: {
       guest: {
         name: "Ben Shapiro",
         link: "https://benshapi.ro/",
+      },
+      readingsStandard: {
+        framing: {
+          authorText: "William J. Pluta, Clark A. Chinn, Ravit Golan Duncan",
+          title: "Learners' Epistemic Criteria for Good Scientific Models",
+          publicationText: "Journal of Research in Science Teaching, 2011",
+          link: "https://canvas.uw.edu/files/110704967/",
+        },
+        instances: [
+          {
+            authorText:
+              "Andrea A. diSessa, David Hammer, Bruce Sherin, Tina Kolpakowski",
+            title:
+              "Inventing Graphing: Meta-Representational Expertise in Children",
+            publicationText: "The Journal of Mathematical Behavior, 1991",
+            link: "https://canvas.uw.edu/files/109846090/",
+          },
+          {
+            authorText:
+              "Thomas M. Philip, Maria C. Olivares-Pasillas, Janet Rocha",
+            title:
+              "Becoming Racially Literate About Data and Data-Literate About Race: Data Visualizations in the Classroom as a Site of Racial-Ideological Micro-Contestations",
+            publicationText: "Cognition and Instruction, 2016",
+            link: "https://canvas.uw.edu/files/110704966/",
+          },
+        ],
       },
     },
     // Week 8
@@ -616,6 +677,31 @@ export const calendarData: {
         name: "Mitchell Gordon",
         link: "https://mgordon.me/",
       },
+      readingsStandard: {
+        framing: {
+          authorText: "Eric Horvitz",
+          title: "Principles of Mixed-Initiative User Interfaces",
+          publicationText: "CHI 1999",
+          link: "https://canvas.uw.edu/files/110367098/",
+        },
+        instances: [
+          {
+            authorText:
+              "Mitchell L. Gordon, Michelle S. Lam, Joon Sung Park, Kayur Patel, Jeff Hancock, Tatsunori Hashimoto, Michael S. Bernstein",
+            title:
+              "Jury Learning: Integrating Dissenting Voices into Machine Learning Models",
+            publicationText: "CHI 2022",
+            link: "https://canvas.uw.edu/files/109846184/",
+          },
+          {
+            authorText:
+              "Joon Sung Park, Joseph C. O'Brien, Carrie J. Cai, Meredith Ringel Morris, Percy Liang, Michael S. Bernstein",
+            title: "Generative Agents: Interactive Simulacra of Human Behavior",
+            publicationText: "UIST 2023",
+            link: "https://canvas.uw.edu/files/110367205/",
+          },
+        ],
+      },
     },
     {
       date: verifyCalendarDate("2023-11-16", "Thu"),
@@ -625,6 +711,32 @@ export const calendarData: {
       guest: {
         name: "Jason Yip",
         link: "https://bigyipper.com/",
+      },
+      readingsStandard: {
+        framing: {
+          authorText: "Allison Druin",
+          title: "The Role of Children in the Design of New Technology",
+          publicationText: "Behaviour and Information Technology, 2002",
+          link: "https://canvas.uw.edu/files/109846155/",
+        },
+        instances: [
+          {
+            authorText:
+              "Kung Jin Lee, Wendy Roldan, Tian Qi Zhu, Harkiran Kaur Saluja, Sungmin Na, Britnie Chin, Yilin Zeng, Jin Ha Lee, Jason Yip",
+            title:
+              "The Show Must Go On: A Conceptual Model of Conducting Synchronous Participatory Design With Children Online",
+            publicationText: "CHI 2021",
+            link: "https://canvas.uw.edu/files/109846160/",
+          },
+          {
+            authorText:
+              "Jason Yip, Kelly Wong, Isabella Oh, Farisha Sultan, Wendy Roldan, Kung Jin Lee, Jimi Huh",
+            title:
+              "Co-Design Tensions Between Parents, Children, and Researchers Regarding Mobile Health Technology Design Needs and Decisions: Case Study",
+            publicationText: "JMIR Formative Research, 2023",
+            link: "https://canvas.uw.edu/files/110702877/",
+          },
+        ],
       },
     },
     // Week 9
@@ -637,13 +749,112 @@ export const calendarData: {
         name: "Mako Hill",
         link: "https://mako.cc/",
       },
+      readingsStandard: {
+        framing: {
+          authorText: "Mark S. Ackerman",
+          title:
+            "The Intellectual Challenge of CSCW: The Gap Between Social Requirements and Technical Feasibility",
+          publicationText: "HCI 2000",
+          link: "https://canvas.uw.edu/files/109846110/",
+        },
+        instances: [
+          {
+            authorText:
+              "Aaron Halfaker, R. Stuart Geiger, Jonathan T. Morgan, John Riedl",
+            title:
+              "The Rise and Decline of an Open Collaboration System: How Wikipedia’s Reaction to Popularity Is Causing Its Decline",
+            publicationText: "American Behavioral Scientist 2012",
+            link: "https://canvas.uw.edu/files/109846115/",
+          },
+          {
+            authorText:
+              "Sneha Narayan, Jake Orlowitz, Jonathan T Morgan, Benjamin Mako Hill, Aaron Shaw",
+            title:
+              "The Wikipedia Adventure: Field Evaluation of an Interactive Tutorial for New Users",
+            publicationText: "CSCW 2017",
+            link: "https://canvas.uw.edu/files/109846121/",
+          },
+        ],
+      },
+      additionalResourceReadings: [
+        {
+          authorText:
+            "P. J. Resnick, Neophytos Iacovou, Mitesh Suchak, Pete Bergstrom, John Riedl",
+          title:
+            "GroupLens: An Open Architecture for Collaborative Filtering of Netnews",
+          publicationText: "CSCW 1994",
+          link: "https://canvas.uw.edu/files/109846127/",
+        },
+      ],
     },
     // Week 11
     {
       date: verifyCalendarDate("2023-12-05", "Tue"),
       timeAndLocation: LECTURE_TIME_AND_LOCATION,
       type: "lecture",
-      title: "Research Topic: TBD",
+      title: "Research Topic: Personal Health Informatics",
+      guest: {
+        name: "Sean Munson",
+        link: "https://www.smunson.com/",
+      },
+      contentNonstandard: (
+        <React.Fragment>
+          <p>Read both framing papers:</p>
+          <ul>
+            <li>
+              <p>
+                <FormattedReading
+                  reading={{
+                    authorText: "Ian Li, Anind Dey, Jodi Forlizzi",
+                    title:
+                      "A Stage-Based Model of Personal Informatics Systems",
+                    publicationText: "CHI 2010",
+                    link: "https://canvas.uw.edu/files/112522023",
+                  }}
+                />
+              </p>
+            </li>
+            <li>
+              <p>
+                <FormattedReading
+                  reading={{
+                    authorText: "Charlotte P. Lee",
+                    title:
+                      "Boundary Negotiating Artifacts: Unbinding the Routine of Boundary Objects and Embracing Chaos in Collaborative Work",
+                    publicationText: "CSCW 2007",
+                    link: "https://canvas.uw.edu/files/112522025/",
+                  }}
+                />
+              </p>
+            </li>
+          </ul>
+          <p>Optional instance reading:</p>
+          <ul>
+            <li>
+              <p>
+                <FormattedReading
+                  reading={{
+                    authorText:
+                      "Chia-Fang Chung, Qiaosi Wang, Jessica Schroeder, Allison Cole, Jasmine Zia, James Fogarty, Sean A. Munson",
+                    title:
+                      "Identifying and Planning for Individualized Change: Patient-Provider Collaboration Using Lightweight Food Diaries in Healthy Eating and Irritable Bowel Syndrome",
+                    publicationText: "UbiComp 2019",
+                    link: "https://canvas.uw.edu/files/112522022",
+                  }}
+                />
+              </p>
+            </li>
+          </ul>
+          <p>
+            Post a reading report in the appropriate thread(s), by 11:59pm the
+            night before class:
+          </p>
+          <CourseStoreLink
+            outerComponent="p"
+            linkKey={"linkCanvasDiscussion"}
+          />
+        </React.Fragment>
+      ),
     },
     {
       date: verifyCalendarDate("2023-12-07", "Thu"),
@@ -660,6 +871,30 @@ export const calendarData: {
           link: "https://lichard49.github.io/",
         },
       ],
+      readingsStandard: {
+        framing: {
+          authorText: "Philip Guo",
+          title:
+            "Ten Million Users and Ten Years Later: Python Tutor’s Design Guidelines for Building Scalable and Sustainable Research Software in Academia",
+          publicationText: "UIST 2021",
+          link: "https://canvas.uw.edu/files/112522481/",
+        },
+        instances: [
+          {
+            authorText: "Katharina Reinecke and Krzysztof Z. Gajos",
+            title:
+              "LabintheWild: Conducting Large-Scale Online Experiments With Uncompensated Samples",
+            publicationText: "CSCW 2015",
+            link: "https://canvas.uw.edu/files/112522487/",
+          },
+          {
+            authorText: "Richard Li et al",
+            title: "Title Anonymized",
+            publicationText: "In Preparation",
+            link: "https://canvas.uw.edu/files/112522484/",
+          },
+        ],
+      },
     },
 
     // Project Milestone Presentations, Week 6 and Week 10
@@ -680,7 +915,8 @@ export const calendarData: {
     projectProposal: {
       type: "assignment",
       title: "Project Proposal",
-      date: verifyCalendarDate("2023-10-13", "Fri"),
+      link: SiteLinks.assignmentsProjectTop.href,
+      date: verifyCalendarDate("2023-10-15", "Sun"),
       submission: "canvas",
       submitCanvasTime: "11:59pm",
       submitCanvasLink:
@@ -689,29 +925,90 @@ export const calendarData: {
     projectMilestoneReport1: {
       type: "assignment",
       title: "Project Milestone Report 1",
+      link: SiteLinks.assignmentsProjectTop.href,
       date: verifyCalendarDate("2023-10-30", "Mon"),
       submission: "canvas",
       submitCanvasTime: "11:59pm",
       submitCanvasLink:
         "https://canvas.uw.edu/courses/1665830/assignments/8670192",
     },
+    projectMilestonePresentation1Day1: {
+      type: "assignment",
+      title: "Project Milestone Presentation",
+      link: SiteLinks.assignmentsProjectTop.href,
+      date: verifyCalendarDate("2023-10-31", "Tue"),
+    },
+    projectMilestonePresentation1Day2: {
+      type: "assignment",
+      title: "Project Milestone Presentation",
+      link: SiteLinks.assignmentsProjectTop.href,
+      date: verifyCalendarDate("2023-11-02", "Thu"),
+    },
     projectMilestoneReport2: {
       type: "assignment",
       title: "Project Milestone Report 2",
+      link: SiteLinks.assignmentsProjectTop.href,
       date: verifyCalendarDate("2023-11-27", "Mon"),
       submission: "canvas",
       submitCanvasTime: "11:59pm",
       submitCanvasLink:
         "https://canvas.uw.edu/courses/1665830/assignments/8670193",
     },
+    projectMilestonePresentation2Day1: {
+      type: "assignment",
+      title: "Project Milestone Presentation",
+      link: SiteLinks.assignmentsProjectTop.href,
+      date: verifyCalendarDate("2023-11-28", "Tue"),
+    },
+    projectMilestonePresentation2Day2: {
+      type: "assignment",
+      title: "Project Milestone Presentation",
+      link: SiteLinks.assignmentsProjectTop.href,
+      date: verifyCalendarDate("2023-11-30", "Thu"),
+    },
     projectFinalReport: {
       type: "assignment",
       title: "Project Final Report",
+      link: SiteLinks.assignmentsProjectTop.href,
       date: verifyCalendarDate("2023-12-12", "Tue"),
       submission: "canvas",
       submitCanvasTime: "11:59pm",
       submitCanvasLink:
         "https://canvas.uw.edu/courses/1665830/assignments/8670191",
+    },
+
+    statisticsLabAvailable: {
+      type: "assignment",
+      title: "Statistics Lab Available",
+      link: SiteLinks.assignmentsStatisticsLabTop.href,
+      date: verifyCalendarDate("2023-10-26", "Thu"),
+    },
+    statisticsLab: {
+      type: "assignment",
+      title: "Statistics Lab",
+      link: SiteLinks.assignmentsStatisticsLabTop.href,
+      date: verifyCalendarDate("2023-11-19", "Sun"),
+      submission: "canvas",
+      submitCanvasTime: "11:59pm",
+      submitCanvasLink:
+        "https://canvas.uw.edu/courses/1665830/assignments/8670195",
+    },
+
+    examAvailable: {
+      type: "assignment",
+      title: "Exam Available",
+      link: SiteLinks.assignmentsExamTop.href,
+      date: verifyCalendarDate("2023-12-07", "Thu"),
+    },
+    exam: {
+      type: "assignment",
+      title: "Exam",
+      link: SiteLinks.assignmentsExamTop.href,
+      date: verifyCalendarDate("2023-12-11", "Mon"),
+      submission: "canvas",
+      submitCanvasTime: "11:59pm",
+      submitCanvasLink:
+        "https://canvas.uw.edu/courses/1665830/assignments/8670190",
     },
   },
 };
