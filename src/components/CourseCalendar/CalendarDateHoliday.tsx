@@ -1,9 +1,12 @@
 import * as React from "react";
 
+import { ok as assert } from "assert";
+
 import { formatCalendarDate } from "@/data/CalendarData";
 import {
   CalendarDate,
   CalendarItem,
+  filterAssignmentCalendarItems,
   HolidayCalendarItem,
 } from "@/types/CalendarData";
 import { idAnchorText } from "@/utils/idAnchorText";
@@ -16,6 +19,13 @@ export const CalendarDateHoliday: React.FunctionComponent<{
   holidayCalendarItem: HolidayCalendarItem;
   calendarItems: CalendarItem[];
 }> = ({ calendarDate, holidayCalendarItem, calendarItems }) => {
+  const assignmentCalendarItems = filterAssignmentCalendarItems(calendarItems);
+
+  assert(
+    assignmentCalendarItems.length === 0,
+    `assignmentCalendarItems.length for ${calendarDate} is ${assignmentCalendarItems.length}`,
+  );
+
   return (
     <Grid
       item

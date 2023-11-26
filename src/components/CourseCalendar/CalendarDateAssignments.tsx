@@ -8,6 +8,7 @@ import { CalendarItemReadingsStandard } from "@/components/CourseCalendar/Calend
 import { CalendarItemTimeAndLocations } from "@/components/CourseCalendar/CalendarItemTimeAndLocations";
 import { formatCalendarDate, parseCalendarDate } from "@/data/CalendarData";
 import {
+  AssignmentCalendarItem,
   CalendarDate,
   CalendarItem,
   filterAssignmentCalendarItems,
@@ -20,11 +21,10 @@ import { differenceInCalendarDays } from "date-fns";
 
 import { CALENDAR_DATE_FORMAT } from "./CourseCalendar";
 
-export const CalendarDateLecture: React.FunctionComponent<{
+export const CalendarDateAssignments: React.FunctionComponent<{
   calendarDate: CalendarDate;
-  lectureCalendarItem: LectureCalendarItem;
-  calendarItems: CalendarItem[];
-}> = ({ calendarDate, lectureCalendarItem, calendarItems }) => {
+  assignmentCalendarItems: AssignmentCalendarItem[];
+}> = ({ calendarDate, assignmentCalendarItems }) => {
   const [expanded, setExpanded] = React.useState<boolean>(
     ((): boolean => {
       const dateCalendar = parseCalendarDate(calendarDate);
@@ -45,8 +45,6 @@ export const CalendarDateLecture: React.FunctionComponent<{
       return "rotate(0deg)";
     }
   })();
-
-  const assignmentCalendarItems = filterAssignmentCalendarItems(calendarItems);
 
   return (
     <Grid
@@ -93,12 +91,8 @@ export const CalendarDateLecture: React.FunctionComponent<{
                 justifyContent: "space-between",
               }}
             >
-              <Typography
-                id={idAnchorText(lectureCalendarItem.title)}
-                component="h2"
-                sx={{ typography: "h3" }}
-              >
-                {lectureCalendarItem.title}
+              <Typography component="h2" sx={{ typography: "h3" }}>
+                Assignment Due
               </Typography>
               <ExpandCircleDownOutlined
                 onClick={toggleExpanded}
@@ -118,11 +112,7 @@ export const CalendarDateLecture: React.FunctionComponent<{
                   marginBottom: 0,
                 },
               }}
-            >
-              <CalendarItemTimeAndLocations
-                calendarItem={lectureCalendarItem}
-              />
-            </Grid>
+            ></Grid>
             <Grid
               item
               xs={10}
@@ -133,18 +123,8 @@ export const CalendarDateLecture: React.FunctionComponent<{
                 },
               }}
             >
-              <CalendarItemGuests calendarItem={lectureCalendarItem} />
               <CalendarItemAssignments
                 assignmentCalendarItems={assignmentCalendarItems}
-              />
-              <CalendarItemReadingsStandard
-                calendarItem={lectureCalendarItem}
-              />
-              <CalendarItemContentNonstandard
-                calendarItem={lectureCalendarItem}
-              />
-              <CalendarItemAdditionalResourceReadings
-                calendarItem={lectureCalendarItem}
               />
             </Grid>
           </Grid>

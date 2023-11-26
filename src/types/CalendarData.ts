@@ -71,7 +71,8 @@ export type AssignmentCalendarItemSubmission =
 export type AssignmentCalendarItem = {
   type: "assignment";
   title: string;
-} & BaseCalendarItemDate &
+  link?: string;
+} & BaseCalendarItemDates &
   AssignmentCalendarItemSubmission;
 
 export type HolidayCalendarItem = {

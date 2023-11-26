@@ -7,6 +7,7 @@ import { CourseStoreLink } from "@/components/links/CourseStoreLink";
 import { default as ContentContributionsInHCI } from "@/contentcomponents/ContributionsInHCI.mdx";
 import { default as ContentNoReading } from "@/contentcomponents/NoReading.mdx";
 import { default as ContentVisionsOfHCI } from "@/contentcomponents/VisionsOfHCI.mdx";
+import { SiteLinks } from "@/data/SiteLinks";
 import {
   AssignmentCalendarItem,
   CalendarDate,
@@ -61,7 +62,11 @@ export function calendarDates(): string[] {
 }
 
 export function calendarItems(): CalendarItem[] {
-  return [...calendarData.holidays, ...calendarData.lectures];
+  return [
+    ...Object.values(calendarData.assignments),
+    ...calendarData.holidays,
+    ...calendarData.lectures,
+  ];
 }
 
 export function calendarItemsForDate(
@@ -105,7 +110,7 @@ export const calendarData: {
 } = {
   datesOfInstruction: {
     start: verifyCalendarDate("2023-09-27", "Wed"),
-    end: verifyCalendarDate("2023-12-08", "Fri"),
+    end: verifyCalendarDate("2023-12-15", "Fri"),
   },
 
   holidays: [
@@ -883,7 +888,7 @@ export const calendarData: {
             link: "https://canvas.uw.edu/files/112522487/",
           },
           {
-            authorText: "Richard Li et al.",
+            authorText: "Richard Li et al",
             title: "Title Anonymized",
             publicationText: "In Preparation",
             link: "https://canvas.uw.edu/files/112522484/",
@@ -910,15 +915,28 @@ export const calendarData: {
     projectProposal: {
       type: "assignment",
       title: "Project Proposal",
+      link: SiteLinks.assignmentsProjectTop.href,
       date: verifyCalendarDate("2023-10-15", "Sun"),
       submission: "canvas",
       submitCanvasTime: "11:59pm",
       submitCanvasLink:
         "https://canvas.uw.edu/courses/1665830/assignments/8670194",
     },
+    projectMilestonePresentation: {
+      type: "assignment",
+      title: "Project Milestone Presentation",
+      link: SiteLinks.assignmentsProjectTop.href,
+      dates: [
+        verifyCalendarDate("2023-10-31", "Tue"),
+        verifyCalendarDate("2023-11-02", "Thu"),
+        verifyCalendarDate("2023-11-28", "Tue"),
+        verifyCalendarDate("2023-11-30", "Thu"),
+      ],
+    },
     projectMilestoneReport1: {
       type: "assignment",
       title: "Project Milestone Report 1",
+      link: SiteLinks.assignmentsProjectTop.href,
       date: verifyCalendarDate("2023-10-30", "Mon"),
       submission: "canvas",
       submitCanvasTime: "11:59pm",
@@ -928,6 +946,7 @@ export const calendarData: {
     projectMilestoneReport2: {
       type: "assignment",
       title: "Project Milestone Report 2",
+      link: SiteLinks.assignmentsProjectTop.href,
       date: verifyCalendarDate("2023-11-27", "Mon"),
       submission: "canvas",
       submitCanvasTime: "11:59pm",
@@ -937,6 +956,7 @@ export const calendarData: {
     projectFinalReport: {
       type: "assignment",
       title: "Project Final Report",
+      link: SiteLinks.assignmentsProjectTop.href,
       date: verifyCalendarDate("2023-12-12", "Tue"),
       submission: "canvas",
       submitCanvasTime: "11:59pm",
@@ -947,29 +967,35 @@ export const calendarData: {
     statisticsLabAvailable: {
       type: "assignment",
       title: "Statistics Lab Available",
+      link: SiteLinks.assignmentsStatisticsLabTop.href,
       date: verifyCalendarDate("2023-10-26", "Thu"),
     },
     statisticsLab: {
       type: "assignment",
       title: "Statistics Lab",
+      link: SiteLinks.assignmentsStatisticsLabTop.href,
       date: verifyCalendarDate("2023-11-19", "Sun"),
       submission: "canvas",
       submitCanvasTime: "11:59pm",
-      submitCanvasLink: undefined,
+      submitCanvasLink:
+        "https://canvas.uw.edu/courses/1665830/assignments/8670195",
     },
 
     examAvailable: {
       type: "assignment",
       title: "Exam Available",
+      link: SiteLinks.assignmentsExamTop.href,
       date: verifyCalendarDate("2023-12-07", "Thu"),
     },
     exam: {
       type: "assignment",
       title: "Exam",
+      link: SiteLinks.assignmentsExamTop.href,
       date: verifyCalendarDate("2023-12-11", "Mon"),
       submission: "canvas",
       submitCanvasTime: "11:59pm",
-      submitCanvasLink: undefined,
+      submitCanvasLink:
+        "https://canvas.uw.edu/courses/1665830/assignments/8670190",
     },
   },
 };

@@ -1,14 +1,17 @@
 "use client";
 
 import * as React from "react";
+import { Fragment } from "react";
 
 import { ok as assert } from "assert";
 
+import { CalendarDateAssignments } from "@/components/CourseCalendar/CalendarDateAssignments";
 import { CalendarDateHoliday } from "@/components/CourseCalendar/CalendarDateHoliday";
 import { CalendarDateLecture } from "@/components/CourseCalendar/CalendarDateLecture";
 import { calendarDates, calendarItemsForDate } from "@/data/CalendarData";
 import {
   CalendarDate,
+  filterAssignmentCalendarItems,
   filterHolidayCalendarItems,
   filterLectureCalendarItems,
 } from "@/types/CalendarData";
@@ -21,6 +24,8 @@ export const CourseCalendar: React.FunctionComponent = () => {
     calendarDateCurrent: CalendarDate,
   ): React.ReactNode {
     const dateCalendarItems = calendarItemsForDate(calendarDateCurrent);
+    const assignmentCalendarItems =
+      filterAssignmentCalendarItems(dateCalendarItems);
     const holidayCalendarItems = filterHolidayCalendarItems(dateCalendarItems);
     const lectureCalendarItems = filterLectureCalendarItems(dateCalendarItems);
 
@@ -50,6 +55,18 @@ export const CourseCalendar: React.FunctionComponent = () => {
           calendarItems={dateCalendarItems}
         />
       );
+    } else if (assignmentCalendarItems.length > 0) {
+      assert(
+        dateCalendarItems.length === assignmentCalendarItems.length,
+        `Unexpected calendar items for ${calendarDateCurrent}`,
+      );
+
+      return (
+        <CalendarDateAssignments
+          calendarDate={calendarDateCurrent}
+          assignmentCalendarItems={assignmentCalendarItems}
+        />
+      );
     } else {
       assert(
         dateCalendarItems.length === 0,
@@ -66,8 +83,12 @@ export const CourseCalendar: React.FunctionComponent = () => {
         .filter((calendarDateCurrent: CalendarDate) => {
           return calendarItemsForDate(calendarDateCurrent).length > 0;
         })
-        .map((calendarDateCurrent: CalendarDate) => {
-          return renderCalendarDate(calendarDateCurrent);
+        .map((calendarDateCurrent: CalendarDate, calendarDateIndex: number) => {
+          return (
+            <Fragment key={calendarDateIndex}>
+              {renderCalendarDate(calendarDateCurrent)}
+            </Fragment>
+          );
         })}
     </Grid>
   );
