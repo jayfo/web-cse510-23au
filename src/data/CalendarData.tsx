@@ -922,17 +922,6 @@ export const calendarData: {
       submitCanvasLink:
         "https://canvas.uw.edu/courses/1665830/assignments/8670194",
     },
-    projectMilestonePresentation: {
-      type: "assignment",
-      title: "Project Milestone Presentation",
-      link: SiteLinks.assignmentsProjectTop.href,
-      dates: [
-        verifyCalendarDate("2023-10-31", "Tue"),
-        verifyCalendarDate("2023-11-02", "Thu"),
-        verifyCalendarDate("2023-11-28", "Tue"),
-        verifyCalendarDate("2023-11-30", "Thu"),
-      ],
-    },
     projectMilestoneReport1: {
       type: "assignment",
       title: "Project Milestone Report 1",
@@ -943,6 +932,18 @@ export const calendarData: {
       submitCanvasLink:
         "https://canvas.uw.edu/courses/1665830/assignments/8670192",
     },
+    projectMilestonePresentation1Day1: {
+      type: "assignment",
+      title: "Project Milestone Presentation",
+      link: SiteLinks.assignmentsProjectTop.href,
+      date: verifyCalendarDate("2023-10-31", "Tue"),
+    },
+    projectMilestonePresentation1Day2: {
+      type: "assignment",
+      title: "Project Milestone Presentation",
+      link: SiteLinks.assignmentsProjectTop.href,
+      date: verifyCalendarDate("2023-11-02", "Thu"),
+    },
     projectMilestoneReport2: {
       type: "assignment",
       title: "Project Milestone Report 2",
@@ -952,6 +953,18 @@ export const calendarData: {
       submitCanvasTime: "11:59pm",
       submitCanvasLink:
         "https://canvas.uw.edu/courses/1665830/assignments/8670193",
+    },
+    projectMilestonePresentation2Day1: {
+      type: "assignment",
+      title: "Project Milestone Presentation",
+      link: SiteLinks.assignmentsProjectTop.href,
+      date: verifyCalendarDate("2023-11-28", "Tue"),
+    },
+    projectMilestonePresentation2Day2: {
+      type: "assignment",
+      title: "Project Milestone Presentation",
+      link: SiteLinks.assignmentsProjectTop.href,
+      date: verifyCalendarDate("2023-11-30", "Thu"),
     },
     projectFinalReport: {
       type: "assignment",

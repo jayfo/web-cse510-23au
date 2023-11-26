@@ -72,7 +72,7 @@ export type AssignmentCalendarItem = {
   type: "assignment";
   title: string;
   link?: string;
-} & BaseCalendarItemDates &
+} & BaseCalendarItemDate &
   AssignmentCalendarItemSubmission;
 
 export type HolidayCalendarItem = {
